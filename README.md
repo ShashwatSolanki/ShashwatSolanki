@@ -39,7 +39,22 @@
 
 ---
 
-**links** <a href="https://www.linkedin.com/in/shashwat-solanki-546337152/"> <img src="https://skillicons.dev/icons?i=linkedin" height="30" /> </a> <a href="https://codeforces.com/profile/OnShoreApple"> <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/codeforces.svg" height="30" /> </a> <a href="https://leetcode.com/OnShoreApple"> <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/leetcode.svg" height="30" /> </a> <a href="mailto:shashwatsolanki.work@gmail.com"> <img src="https://skillicons.dev/icons?i=gmail" height="30" /> </a>
+**connect with me**
+
+<p align="left">
+  <a href="mailto:shashwatsolanki.work@gmail.com">
+    <img src="https://skillicons.dev/icons?i=gmail" />
+  </a>
+  <a href="https://www.linkedin.com/in/shashwat-solanki-546337152/">
+    <img src="https://skillicons.dev/icons?i=linkedin" />
+  </a>
+  <a href="https://leetcode.com/OnShoreApple">
+    <img src="https://skillicons.dev/icons?i=leetcode" />
+  </a>
+  <a href="https://codeforces.com/profile/OnShoreApple">
+    <img src="https://skillicons.dev/icons?i=codeforces" />
+  </a>
+</p>
 
 ---
 
