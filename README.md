@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
-  <h1>Hey there 👋 I'm Shashwat Solanki</h1>
-  <p><b>Full-Stack Developer | Backend Systems Enthusiast | Problem Solver</b></p>
+  <h1>Hey 👋 I'm Shashwat Solanki</h1>
+  <p><b>Backend Engineer • System Design Enthusiast • AI Systems Builder</b></p>
   <img src="https://komarev.com/ghpvc/?username=ShashwatSolanki&style=flat-square&color=blue" />
 </div>
 
@@ -9,35 +9,39 @@
 
 ## 🚀 About Me
 
-* 🎓 Computer Science student at PES University
-* ⚙️ Building scalable backend systems & real-time applications
-* 🧠 Interested in system design, distributed systems & AI integration
-* 🛰️ Experience with geospatial systems (CesiumJS + Electron)
-* 🏆 Competitive programming & problem-solving mindset
+* 🎓 CSE @ PES University
+* ⚙️ Focused on **backend engineering & scalable systems**
+* 🧠 Building **AI-powered applications (LLMs + RAG + Agents)**
+* 🛰️ Experience in **geospatial systems (CesiumJS + Electron)**
+* 🏆 Strong problem-solving & competitive programming mindset
+
+---
+
+## 🧠 Core Strengths
+
+* Backend System Design (Multi-tenant, RBAC, APIs)
+* Database Design & Optimization (PostgreSQL, indexing)
+* Scalable Architecture & Distributed Thinking
+* AI Systems (LLMs, RAG pipelines, multi-agent workflows)
 
 ---
 
 ## 🛠️ Tech Stack
 
-### 💻 Languages
+**Languages**
+C • Go • Python • JavaScript
 
-C • C++ • Python • JavaScript
-
-### 🌐 Frontend
-
+**Frontend**
 React • Vue.js • HTML • CSS • Framer Motion
 
-### 🔧 Backend
+**Backend**
+Node.js • Express • Flask • FastAPI • REST APIs • WebSockets
 
-Node.js • Express.js • Flask • REST APIs • WebSockets
+**Databases**
+PostgreSQL • MongoDB • Advanced SQL
 
-### 🗄️ Databases
-
-PostgreSQL • MongoDB • SQL (Schema Design, Indexing)
-
-### ⚙️ Tools & Platforms
-
-Git • GitHub • Docker • Linux • VS Code • CI/CD
+**Tools**
+Git • Docker • Linux • CI/CD • VS Code
 
 ---
 
@@ -45,34 +49,26 @@ Git • GitHub • Docker • Linux • VS Code • CI/CD
 
 ### 🛰️ RIDaM — Remote Imagery Data Management System
 
-A scalable platform for managing satellite imagery datasets with RBAC, metadata tagging, and validation pipelines.
+A scalable system for managing satellite imagery datasets with RBAC, metadata tagging, and validation pipelines.
 
 * **Stack**: Vue.js, Flask, PostgreSQL
 
 ---
 
-### 💬 Dribbl — Real-Time Chat Application
-
-A WhatsApp-inspired chat app with live messaging, typing indicators, and persistent storage.
-
-* **Stack**: React, Node.js, Socket.io, PostgreSQL
-* **Features**: Real-time sync, smooth UI (Framer Motion), authentication
-
----
-
 ### 🤖 FinMate — AutoGPT Financial Assistant (Capstone)
 
-A modular multi-agent system for budgeting, investment analysis, and financial insights using LLMs + RAG.
+A modular multi-agent financial assistant that performs budgeting, investment analysis, and financial reasoning using LLMs + RAG memory.
 
-* **Highlights**: Multi-agent orchestration, memory layer, external API integration
+* **Highlights**: Multi-agent orchestration, memory layer, external integrations
 
 ---
 
-### 🌐 Personal Portfolio
+### ⚙️ Multi-Tenant SaaS Backend (In Progress)
 
-A full-stack portfolio showcasing projects, skills, and experience with clean UI and backend integration.
+A production-grade backend designed for multi-tenant systems with strong isolation and security.
 
-* **Stack**: React, Node.js, PostgreSQL
+* **Features**: JWT auth, RBAC, tenant isolation, scalable schema design
+* **Stack**: FastAPI, PostgreSQL, SQLAlchemy
 
 ---
 
@@ -82,21 +78,29 @@ A full-stack portfolio showcasing projects, skills, and experience with clean UI
 
 ---
 
-## 📫 Connect With Me
+## 🧩 System Design Interests
 
-* 📧 Email: [shashwatsolanki.work@gmail.com](mailto:shashwatsolanki.work@gmail.com)
+* Multi-tenant architectures
+* Scalable backend systems
+* Event-driven systems
+* API design & performance optimization
+
+---
+
+## 📫 Connect
+
+* 📧 [shashwatsolanki.work@gmail.com](mailto:shashwatsolanki.work@gmail.com)
 * 💼 LinkedIn: [https://www.linkedin.com/in/shashwat-solanki-546337152/](https://www.linkedin.com/in/shashwat-solanki-546337152/)
-* 📸 Instagram: [https://www.instagram.com/onshoreapple/](https://www.instagram.com/onshoreapple/)
 * 🧠 Codeforces: [https://codeforces.com/profile/OnShoreApple](https://codeforces.com/profile/OnShoreApple)
 
 ---
 
 ## ⚡ Current Focus
 
-* Building production-ready backend systems (multi-tenant SaaS)
-* Advanced SQL & system design
-* AI-powered applications & automation
+* Building production-grade backend systems
+* Advanced SQL & performance optimization
+* AI agents & automation systems
 
 ---
 
-⭐ *Always building. Always learning.*
+⭐ *Focused on building systems that scale.*
