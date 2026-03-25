@@ -20,7 +20,7 @@
 
 ---
 
-<h3>🧑‍💻 About Me</h3>
+<h3> About Me</h3>
 
 <p>
 🎓 CSE @ PES University <br>
@@ -34,7 +34,7 @@
 
 ---
 
-<h3>⚙️ Tech Stack</h3>
+<h3> Tech Stack</h3>
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=go,python,js,fastapi,nodejs,react,vue,postgres,docker,linux,git,electron,mongodb" />
@@ -42,20 +42,12 @@
 
 ---
 
-<h3>📊 GitHub Stats</h3>
+<h3> GitHub Stats</h3>
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=ShashwatSolanki&show_icons=true&theme=vision-friendly-dark&hide_border=true" height="150"/>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=ShashwatSolanki&theme=vision-friendly-dark&hide_border=true" height="150"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ShashwatSolanki&layout=compact&theme=vision-friendly-dark&hide_border=true" height="150"/>
-</p>
-
----
-
-<h3>🧠 Focus</h3>
-
-<p>
-backend systems • ai agents • scalable architecture
 </p>
 
 ---
