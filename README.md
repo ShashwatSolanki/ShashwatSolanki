@@ -39,20 +39,7 @@
 
 ---
 
-**connect with me**
-
-<p align="left">
-  <a href="mailto:shashwatsolanki.work@gmail.com">
-    <img src="https://skillicons.dev/icons?i=gmail" />
-  </a>
-  <a href="https://www.linkedin.com/in/shashwat-solanki-546337152/">
-    <img src="https://skillicons.dev/icons?i=linkedin" />
-  </a>
-  <a href="https://leetcode.com/OnShoreApple">
-    <img src="https://skillicons.dev/icons?i=leetcode" />
-  </a>
-  <a href="https://codeforces.com/profile/OnShoreApple">
-    <img src="https://skillicons.dev/icons?i=codeforces" />
+ <img src="https://img.shields.io/badge/Codeforces-445f9d?style=for-the-badge&logo=codeforces&logoColor=white"/>
   </a>
 </p>
 
