@@ -13,13 +13,13 @@
 
 ## 🧑‍💻 About Me
 
-🎓 CSE @ PES University
-⚙️ Backend-focused engineer building scalable, production-grade systems
-🧠 Strong interest in system design, distributed systems & performance optimization
-🔧 Experience with multi-tenant architecture, RBAC & API design
-🤖 Building AI systems using LLMs, RAG & multi-agent workflows
-🛰️ Worked on geospatial systems (CesiumJS + Electron)
-🚀 Currently developing SaaS backend + AI-powered assistants
+🎓 cse @ pes university  
+⚙️ backend-focused engineer building scalable, production-oriented systems  
+🧠 work revolves around system design, database optimization & real-world problem solving  
+🔧 experienced with multi-tenant architectures, rbac, and api design  
+🤖 exploring ai systems — llms, rag pipelines, and multi-agent workflows  
+🛰️ built systems in niche domains like geospatial visualization (cesium + electron)  
+🚀 currently developing a multi-tenant saas backend + ai-powered assistants  
 
 ---
 
