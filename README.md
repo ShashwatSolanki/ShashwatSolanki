@@ -72,6 +72,15 @@ A production-grade backend designed for multi-tenant systems with strong isolati
 
 ---
 
+### 🌍 Vedant — Geospatial Visualization & Analysis Tool
+
+A desktop-based geospatial visualization system built using CesiumJS and Electron for interactive 3D mapping and measurement tools.
+
+* **Highlights**: Custom measurement tools, geospatial rendering, desktop integration
+* **Stack**: CesiumJS, Electron, Vue.js
+
+---
+
 ## 📊 GitHub Stats
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ShashwatSolanki\&layout=compact\&theme=vision-friendly-dark)](https://github.com/anuraghazra/github-readme-stats)
