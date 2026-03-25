@@ -6,21 +6,27 @@
   <img src="https://img.shields.io/badge/focus-backend%20systems-blue" />
   <img src="https://img.shields.io/badge/interest-ai%20agents-purple" />
   <img src="https://img.shields.io/badge/building-scalable%20systems-green" />
+  <img src="https://img.shields.io/badge/backend-fastapi%20%7C%20node-black" />
+  <img src="https://img.shields.io/badge/database-postgresql-blue" />
+  <img src="https://img.shields.io/badge/devops-docker-informational" />
 </div>
 
 ---
 
 **about**
 🎓 cse @ pes university
-⚙️ building scalable backend systems & ai-driven applications
-🧠 interested in distributed systems, system design & real-world engineering
-🚀 currently working on multi-tenant saas + ai agents
+⚙️ backend-focused engineer building scalable, production-oriented systems
+🧠 work revolves around system design, database optimization & real-world problem solving
+🔧 experienced with multi-tenant architectures, rbac, and api design
+🤖 exploring ai systems — llms, rag pipelines, and multi-agent workflows
+🛰️ built systems in niche domains like geospatial visualization (cesium + electron)
+🚀 currently developing a multi-tenant saas backend + ai-powered assistants
 
 ---
 
 **tech**
 
-<img src="https://skillicons.dev/icons?i=go,python,js,fastapi,nodejs,react,vue,postgres,docker,linux,git" />
+<img src="https://skillicons.dev/icons?i=go,python,js,fastapi,nodejs,react,vue,postgres,docker,linux,git,electron,mongodb" />
 
 ---
 
