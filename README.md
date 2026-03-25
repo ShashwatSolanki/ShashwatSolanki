@@ -13,14 +13,14 @@
 
 ---
 
-**about**  
-🎓 cse @ pes university  
-⚙️ backend-focused engineer building scalable, production-oriented systems  
-🧠 work revolves around system design, database optimization & real-world problem solving  
-🔧 experienced with multi-tenant architectures, rbac, and api design  
-🤖 exploring ai systems — llms, rag pipelines, and multi-agent workflows  
-🛰️ built systems in niche domains like geospatial visualization (cesium + electron)  
-🚀 currently developing a multi-tenant saas backend + ai-powered assistants  
+**about**
+🎓 cse @ pes university
+⚙️ backend-focused engineer building scalable, production-oriented systems
+🧠 work revolves around system design, database optimization & real-world problem solving
+🔧 experienced with multi-tenant architectures, rbac, and api design
+🤖 exploring ai systems — llms, rag pipelines, and multi-agent workflows
+🛰️ built systems in niche domains like geospatial visualization (cesium + electron)
+🚀 currently developing a multi-tenant saas backend + ai-powered assistants
 
 ---
 
@@ -39,11 +39,7 @@
 
 ---
 
-**links**
-[linkedin](https://www.linkedin.com/in/shashwat-solanki-546337152/) •
-[codeforces](https://codeforces.com/profile/OnShoreApple) •
-[leetcode](https://leetcode.com/OnShoreApple) •
-[shashwatsolanki.work@gmail.com](mailto:shashwatsolanki.work@gmail.com)
+**links** <a href="https://www.linkedin.com/in/shashwat-solanki-546337152/"> <img src="https://skillicons.dev/icons?i=linkedin" height="30" /> </a> <a href="https://codeforces.com/profile/OnShoreApple"> <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/codeforces.svg" height="30" /> </a> <a href="https://leetcode.com/OnShoreApple"> <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/leetcode.svg" height="30" /> </a> <a href="mailto:shashwatsolanki.work@gmail.com"> <img src="https://skillicons.dev/icons?i=gmail" height="30" /> </a>
 
 ---
 
