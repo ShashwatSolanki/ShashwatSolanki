@@ -11,7 +11,7 @@
 
 ---
 
-## 🧑‍💻 About Me
+##  About Me
 
 🎓 cse @ pes university  
 ⚙️ backend-focused engineer building scalable, production-oriented systems  
@@ -23,7 +23,7 @@
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 
 <p>
   <img src="https://skillicons.dev/icons?i=go,python,js,fastapi,nodejs,react,vue,postgres,docker,linux,git,electron,mongodb" />
@@ -31,7 +31,7 @@
 
 ---
 
-## 📊 GitHub Stats
+##  GitHub Stats
 
 <p>
   <img src="https://github-readme-stats.vercel.app/api?username=ShashwatSolanki&show_icons=true&theme=vision-friendly-dark&hide_border=true" height="150"/>
@@ -44,7 +44,7 @@
 
 ---
 
-## 🌐 Connect With Me
+##  Connect With Me
 
 <p>
   <a href="mailto:shashwatsolanki.work@gmail.com">
