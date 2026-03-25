@@ -13,15 +13,14 @@
 
 ---
 
-**about**
-🎓 cse @ pes university
-⚙️ backend-focused engineer building scalable, production-oriented systems
-🧠 work revolves around system design, database optimization & real-world problem solving
-🔧 experienced with multi-tenant architectures, rbac, and api design
-🤖 exploring ai systems — llms, rag pipelines, and multi-agent workflows
-🛰️ built systems in niche domains like geospatial visualization (cesium + electron)
-🚀 currently developing a multi-tenant saas backend + ai-powered assistants
-
+**about**  
+🎓 cse @ pes university  
+⚙️ backend-focused engineer building scalable, production-oriented systems  
+🧠 work revolves around system design, database optimization & real-world problem solving  
+🔧 experienced with multi-tenant architectures, rbac, and api design  
+🤖 exploring ai systems — llms, rag pipelines, and multi-agent workflows  
+🛰️ built systems in niche domains like geospatial visualization (cesium + electron)  
+🚀 currently developing a multi-tenant saas backend + ai-powered assistants  
 ---
 
 **tech**
@@ -39,7 +38,20 @@
 
 ---
 
- <img src="https://img.shields.io/badge/Codeforces-445f9d?style=for-the-badge&logo=codeforces&logoColor=white"/>
+**connect with me**
+
+<p align="center">
+  <a href="mailto:shashwatsolanki.work@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://www.linkedin.com/in/shashwat-solanki-546337152/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://leetcode.com/OnShoreApple">
+    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" />
+  </a>
+  <a href="https://codeforces.com/profile/OnShoreApple">
+    <img src="https://img.shields.io/badge/Codeforces-445f9d?style=for-the-badge&logo=codeforces&logoColor=white" />
   </a>
 </p>
 
