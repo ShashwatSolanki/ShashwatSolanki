@@ -11,23 +11,32 @@
 ---
 
 **about**
-cse @ pes university
-building scalable backend systems & ai-driven applications
-interested in distributed systems and real-world engineering problems
+🎓 cse @ pes university
+⚙️ building scalable backend systems & ai-driven applications
+🧠 interested in distributed systems, system design & real-world engineering
+🚀 currently working on multi-tenant saas + ai agents
 
 ---
 
 **tech**
-go • python • javascript
-fastapi • node • react • vue
-postgres • docker
+
+<img src="https://skillicons.dev/icons?i=go,python,js,fastapi,nodejs,react,vue,postgres,docker,linux,git" />
+
+---
+
+**stats**
+
+<img src="https://github-readme-stats.vercel.app/api?username=ShashwatSolanki&show_icons=true&theme=vision-friendly-dark&hide_border=true" height="150"/>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=ShashwatSolanki&theme=vision-friendly-dark&hide_border=true" height="150"/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ShashwatSolanki&layout=compact&theme=vision-friendly-dark&hide_border=true" height="150"/>
 
 ---
 
 **links**
 [linkedin](https://www.linkedin.com/in/shashwat-solanki-546337152/) •
 [codeforces](https://codeforces.com/profile/OnShoreApple) •
-[leetcode](https://leetcode.com/) •
+[leetcode](https://leetcode.com/OnShoreApple) •
 [shashwatsolanki.work@gmail.com](mailto:shashwatsolanki.work@gmail.com)
 
 ---
