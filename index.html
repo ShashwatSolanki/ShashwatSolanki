@@ -3,317 +3,1611 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio of Shashwat Solanki, a computer science student building systems, geospatial tools, and AI products."
-    />
-    <title>Shashwat Solanki | Software Engineer</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Shashwat Solanki | Backend Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet" />
+    <style>
+      /* ── Tokens ── */
+      :root {
+        --bg: #09090b;
+        --surface: #111113;
+        --surface-2: #18181b;
+        --surface-3: #1f1f23;
+        --ink: #fafafa;
+        --ink-2: #e4e4e7;
+        --muted: #71717a;
+        --muted-2: #a1a1aa;
+        --line: #27272a;
+        --line-2: #3f3f46;
+        --accent: #4f8cff;
+        --accent-dim: rgba(79, 140, 255, 0.12);
+        --accent-border: rgba(79, 140, 255, 0.25);
+        --mono: "JetBrains Mono", monospace;
+        --sans: "Inter", sans-serif;
+        --radius: 12px;
+        --radius-lg: 20px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--sans);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      /* ── Progress bar ── */
+      #progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent), #a78bfa);
+        z-index: 9999;
+        transition: width 0.1s linear;
+      }
+
+      /* ── Header ── */
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 6%;
+        height: 64px;
+        background: rgba(9, 9, 11, 0.8);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s;
+      }
+      .header.scrolled {
+        border-bottom-color: var(--line);
+      }
+
+      .brand {
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--ink);
+        letter-spacing: 0.05em;
+      }
+
+      .nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+      .nav a {
+        font-size: 0.85rem;
+        color: var(--muted-2);
+        text-decoration: none;
+        transition: color 0.2s;
+        letter-spacing: 0.01em;
+      }
+      .nav a:hover {
+        color: var(--ink);
+      }
+
+      .nav-cta {
+        padding: 0.45rem 1rem;
+        border-radius: 8px;
+        background: var(--accent-dim);
+        border: 1px solid var(--accent-border);
+        color: var(--accent) !important;
+        font-weight: 500;
+        transition: background 0.2s, color 0.2s !important;
+      }
+      .nav-cta:hover {
+        background: rgba(79, 140, 255, 0.2) !important;
+      }
+
+      /* ── Layout ── */
+      .container {
+        width: min(1140px, 90%);
+        margin: 0 auto;
+      }
+
+      section {
+        padding: 100px 0;
+      }
+
+      /* ── Hero ── */
+      .hero {
+        min-height: calc(100vh - 64px);
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 6rem;
+        align-items: center;
+        padding: 80px 0;
+      }
+
+      .eyebrow {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--muted-2);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 1px;
+        background: var(--muted);
+      }
+
+      .hero-name {
+        font-size: clamp(3rem, 7vw, 6rem);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: var(--ink);
+        margin-bottom: 1.25rem;
+      }
+      .hero-name span {
+        background: linear-gradient(135deg, #fff 30%, #a1a1aa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-role {
+        font-size: 1rem;
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        margin-bottom: 1.5rem;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        background: var(--accent-dim);
+        border: 1px solid var(--accent-border);
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-bottom: 1.75rem;
+      }
+      .badge-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #22c55e;
+        box-shadow: 0 0 6px #22c55e;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+
+      .hero-bio {
+        font-size: 1.05rem;
+        color: var(--muted-2);
+        max-width: 480px;
+        line-height: 1.75;
+        margin-bottom: 2.5rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1.5rem;
+        border-radius: var(--radius);
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s;
+        cursor: pointer;
+        border: none;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: #3b7cff;
+        transform: translateY(-1px);
+      }
+
+      .btn-ghost {
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        color: var(--ink-2);
+      }
+      .btn-ghost:hover {
+        border-color: var(--line-2);
+        background: var(--surface-3);
+      }
+
+      /* ── Hero right ── */
+      .hero-right {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .hero-photo {
+        width: 100%;
+        aspect-ratio: 4/4.5;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--line);
+        background: var(--surface-2);
+        overflow: hidden;
+        position: relative;
+      }
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .photo-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--muted);
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        font-family: var(--mono);
+      }
+      .photo-placeholder svg {
+        opacity: 0.3;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+      .metric {
+        padding: 1rem 1.25rem;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        background: var(--surface);
+        transition: border-color 0.2s;
+      }
+      .metric:hover {
+        border-color: var(--line-2);
+      }
+      .metric strong {
+        display: block;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--accent);
+        font-family: var(--mono);
+        line-height: 1.2;
+      }
+      .metric span {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 0.2rem;
+        display: block;
+      }
+
+      /* ── Section headers ── */
+      .section-label {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--muted);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .section-label::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--line);
+      }
+
+      .section-title {
+        font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.15;
+        color: var(--ink);
+        margin-bottom: 1rem;
+      }
+
+      .section-sub {
+        font-size: 1rem;
+        color: var(--muted-2);
+        max-width: 540px;
+        line-height: 1.7;
+        margin-bottom: 3.5rem;
+      }
+
+      /* ── What I Build ── */
+      .build-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-bottom: 0;
+      }
+
+      .build-card {
+        padding: 1.75rem;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--line);
+        background: var(--surface);
+        transition: border-color 0.2s, transform 0.2s;
+      }
+      .build-card:hover {
+        border-color: var(--line-2);
+        transform: translateY(-3px);
+      }
+
+      .build-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: var(--accent-dim);
+        border: 1px solid var(--accent-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .build-card h3 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+      }
+
+      .build-card p {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* ── Projects ── */
+      .projects-grid {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .project-featured {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--line);
+        background: var(--surface);
+        overflow: hidden;
+        transition: border-color 0.25s;
+      }
+      .project-featured:hover {
+        border-color: var(--line-2);
+      }
+
+      .project-featured-content {
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .project-featured-img {
+        background: var(--surface-2);
+        border-left: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 320px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-featured-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .img-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.75rem;
+      }
+      .img-placeholder svg {
+        opacity: 0.2;
+      }
+
+      .projects-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+
+      .project-card {
+        padding: 1.75rem;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--line);
+        background: var(--surface);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: border-color 0.2s, transform 0.2s;
+        cursor: default;
+      }
+      .project-card:hover {
+        border-color: var(--line-2);
+        transform: translateY(-4px);
+      }
+
+      .project-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .project-tag {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: var(--accent);
+        background: var(--accent-dim);
+        border: 1px solid var(--accent-border);
+        padding: 0.2rem 0.6rem;
+        border-radius: 4px;
+        white-space: nowrap;
+      }
+
+      .project-name {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 0.4rem;
+      }
+
+      .project-name-lg {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+      }
+
+      .project-desc {
+        font-size: 0.88rem;
+        color: var(--muted-2);
+        line-height: 1.7;
+        flex: 1;
+      }
+
+      .project-desc-lg {
+        font-size: 0.95rem;
+        color: var(--muted-2);
+        line-height: 1.75;
+        margin-bottom: 1.25rem;
+      }
+
+      .project-points {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-bottom: 1.5rem;
+      }
+      .project-points li {
+        font-size: 0.82rem;
+        color: var(--muted-2);
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .project-points li::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: auto;
+      }
+      .tag {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--muted);
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        padding: 0.2rem 0.55rem;
+        border-radius: 4px;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.82rem;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+        transition: gap 0.15s;
+      }
+      .project-link:hover {
+        gap: 0.65rem;
+      }
+
+      .project-link-row {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+      }
+
+      /* ── Experience ── */
+      .work-item {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 3rem;
+        padding: 2.5rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .work-item:first-of-type {
+        padding-top: 0;
+      }
+      .work-item:last-of-type {
+        border-bottom: none;
+      }
+
+      .work-meta {
+        padding-top: 0.15rem;
+      }
+      .work-period {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+        margin-bottom: 0.4rem;
+      }
+      .work-company {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .work-role {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 0.6rem;
+      }
+      .work-desc {
+        font-size: 0.9rem;
+        color: var(--muted-2);
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+      .work-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      /* ── Skills ── */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .skill-group {
+        padding: 1.75rem;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--line);
+        background: var(--surface);
+      }
+
+      .skill-group-label {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--accent);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .skill-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .skill-pill {
+        font-size: 0.8rem;
+        color: var(--ink-2);
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        padding: 0.3rem 0.75rem;
+        border-radius: 6px;
+        transition: border-color 0.15s;
+      }
+      .skill-pill:hover {
+        border-color: var(--line-2);
+      }
+
+      /* ── Education ── */
+      .edu-card {
+        padding: 2rem 2.5rem;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--line);
+        background: var(--surface);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2rem;
+        align-items: center;
+      }
+      .edu-deg {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 0.3rem;
+      }
+      .edu-inst {
+        font-size: 0.9rem;
+        color: var(--accent);
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+      }
+      .edu-detail {
+        font-size: 0.85rem;
+        color: var(--muted-2);
+      }
+      .edu-gpa {
+        text-align: center;
+      }
+      .edu-gpa strong {
+        display: block;
+        font-size: 2.25rem;
+        font-weight: 700;
+        font-family: var(--mono);
+        color: var(--ink);
+        line-height: 1;
+      }
+      .edu-gpa span {
+        font-size: 0.75rem;
+        color: var(--muted);
+        font-family: var(--mono);
+      }
+
+      /* ── Contact ── */
+      .contact-wrap {
+        text-align: center;
+        max-width: 560px;
+        margin: 0 auto;
+      }
+      .contact-wrap .section-title {
+        margin-bottom: 1rem;
+      }
+      .contact-wrap p {
+        color: var(--muted-2);
+        margin-bottom: 2.5rem;
+        line-height: 1.75;
+      }
+      .contact-actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .social-row {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .social-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.82rem;
+        color: var(--muted-2);
+        text-decoration: none;
+        font-family: var(--mono);
+        transition: color 0.2s;
+      }
+      .social-link:hover {
+        color: var(--ink);
+      }
+
+      /* ── Footer ── */
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 2rem 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      footer p {
+        font-size: 0.8rem;
+        color: var(--muted);
+        font-family: var(--mono);
+      }
+
+      /* ── Reveal animation ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          padding: 60px 0;
+        }
+        .hero-right {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero-photo {
+          aspect-ratio: 1;
+        }
+        .metrics {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .build-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .project-featured {
+          grid-template-columns: 1fr;
+        }
+        .project-featured-img {
+          min-height: 200px;
+        }
+        .projects-row {
+          grid-template-columns: 1fr;
+        }
+        .work-item {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .edu-card {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .nav {
+          gap: 1rem;
+        }
+        .nav a:not(.nav-cta) {
+          display: none;
+        }
+        .build-grid {
+          grid-template-columns: 1fr;
+        }
+        .projects-row {
+          grid-template-columns: 1fr;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-right {
+          grid-template-columns: 1fr;
+        }
+        .metrics {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        * {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="#home" aria-label="Shashwat Solanki home">
-        <span>SS</span>
-      </a>
-      <nav class="nav" aria-label="Primary navigation">
+    <div id="progress"></div>
+
+    <!-- ── Header ── -->
+    <header class="header" id="header">
+      <div class="brand">shashwat.dev</div>
+      <nav class="nav">
         <a href="#work">Work</a>
-        <a href="#projects">Projects</a>
-        <a href="#achievements">Wins</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </nav>
-      <a class="header-link" href="assets/Shashwat_Solanki_Resume.pdf" download>
-        Resume
-      </a>
     </header>
 
-    <main id="home">
-      <section class="hero section">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Computer Science Engineer / Systems Builder</p>
-          <h1>Systems, geospatial tools, and AI products built with depth.</h1>
-          <p class="hero-text">
-            I am Shashwat Solanki, a B.Tech CSE student at PES University with
-            experience at ISRO's Space Applications Centre. I like work that sits
-            close to real infrastructure: container runtimes, satellite data
-            platforms, rendering pipelines, and AI-powered document workflows.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#projects">View projects</a>
-            <a class="button secondary" href="mailto:shashwatsolanki.work@gmail.com">
-              Get in touch
-            </a>
-          </div>
-        </div>
+    <main>
+      <!-- ── Hero ── -->
+      <div class="container">
+        <div class="hero">
+          <div class="hero-left">
+            <p class="eyebrow" id="ey">
+              Research Intern @ ISRO &nbsp;•&nbsp; B.Tech CSE @ PES University
+            </p>
 
-        <aside class="hero-panel reveal" aria-label="Portfolio highlights">
-          <div>
-            <span class="metric">30%</span>
-            <p>rendering and data handling performance improvement on large satellite datasets</p>
-          </div>
-          <div>
-            <span class="metric">8.06</span>
-            <p>CGPA in Computer Science and Engineering at PES University</p>
-          </div>
-          <div>
-            <span class="metric">4th</span>
-            <p>place in CodeChef Labyrinth at PES University among 60+ participants</p>
-          </div>
-          <div>
-            <span class="metric">16</span>
-            <p>public GitHub repositories spanning systems, web apps, C projects, and AI workflows</p>
-          </div>
-        </aside>
-      </section>
+            <h1 class="hero-name" id="hn">
+              <span>SHASHWAT</span><br />SOLANKI
+            </h1>
 
-      <section class="section strip" aria-label="Focus areas">
-        <p>Container runtimes</p>
-        <p>Geospatial visualization</p>
-        <p>Backend systems</p>
-        <p>AI media pipelines</p>
-      </section>
+            <p class="hero-role" id="hr">
+              Backend Engineer &nbsp;•&nbsp; AI Systems Builder &nbsp;•&nbsp;
+              Geospatial Developer
+            </p>
 
-      <section class="section two-column reveal" id="work">
-        <div class="section-heading">
-          <p class="eyebrow">Experience</p>
-          <h2>Applied engineering for real-world data.</h2>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <span>Jul 2025 - Aug 2025</span>
-              <span>Ahmedabad, India</span>
+            <div class="badge" id="av">
+              <span class="badge-dot"></span>
+              Open to Software Engineering Opportunities
             </div>
-            <h3>Research Intern, Space Applications Centre (ISRO)</h3>
-            <p>
-              Developed Vedant with CesiumJS, Vue.js, and ElectronJS for terrain
-              profiling, viewshed analysis, and solar rooftop estimation over
-              pan-India satellite datasets.
-            </p>
-            <p>
-              Built RIDaM with Node.js and PostgreSQL for storage, indexing, and
-              retrieval of large-scale raster imagery and metadata.
-            </p>
-          </article>
-        </div>
-      </section>
 
-      <section class="section" id="projects">
-        <div class="section-heading compact reveal">
-          <p class="eyebrow">Projects First</p>
-          <h2>Useful engineering work, from isolated processes to satellite data dashboards.</h2>
-        </div>
+            <p class="hero-bio" id="hb">
+              I build scalable backend systems, multi-agent AI applications,
+              container runtimes, and geospatial platforms — turning complex
+              engineering challenges into clean, maintainable solutions.
+            </p>
 
-        <div class="project-grid">
-          <article class="project-card featured reveal">
-            <div class="project-topline">
-              <span>Go / Linux / Filesystems</span>
-              <a href="https://github.com/ShashwatSolanki/dock-smith" target="_blank" rel="noreferrer">
+            <div class="hero-actions" id="ha">
+              <a href="#work" class="btn btn-primary">View My Work →</a>
+              <a
+                href="https://github.com/ShashwatSolanki"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-ghost">
+                <svg
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
                 GitHub
               </a>
+              <a
+                href="https://linkedin.com/in/shashwat-solanki-546337152/"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-ghost"
+                >LinkedIn</a
+              >
             </div>
-            <h3>Docksmith</h3>
-            <p>
-              A Docker-like container build and runtime system with layered
-              storage, process isolation, content-addressed caching, and a
-              Dockerfile-style parser.
-            </p>
-            <ul class="project-points">
-              <li>Parsed Docksmithfile instructions: FROM, COPY, RUN, WORKDIR, ENV, and CMD.</li>
-              <li>Implemented Linux namespaces and chroot-based isolation.</li>
-              <li>Added reproducible tar normalization for deterministic builds.</li>
-              <li>Used SHA-256 layer hashes to avoid redundant build work.</li>
-            </ul>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-topline">
-              <span>CesiumJS / Vue / Highcharts</span>
-              <span>ISRO</span>
-            </div>
-            <h3>Vedant</h3>
-            <p>
-              Plugin-driven 3D geospatial analysis platform with terrain
-              profiles, line and area measurement, viewshed analysis, and rooftop
-              solar insulation workflows.
-            </p>
-            <div class="chips">
-              <span>Dynamic plugins</span>
-              <span>Raycasting</span>
-              <span>Popup framework</span>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-topline">
-              <span>Vue / Flask / PostgreSQL</span>
-              <span>ISRO</span>
-            </div>
-            <h3>RIDaM</h3>
-            <p>
-              Raster imagery data management system for registering, editing,
-              filtering, deleting, and dashboarding remote-sensing dataset
-              metadata.
-            </p>
-            <div class="chips">
-              <span>Admin dashboard</span>
-              <span>JSON metadata</span>
-              <span>Highcharts</span>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-topline">
-              <span>Next.js / Flask / FFmpeg</span>
-              <a href="https://github.com/ShashwatSolanki/ai_reel_generator" target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-            </div>
-            <h3>AI Reel Generator</h3>
-            <p>
-              Document-to-video pipeline that converts PDFs and slide decks into
-              short-form videos using LLM summarization, structured content
-              extraction, and rendering automation.
-            </p>
-          </article>
-        </div>
-
-        <div class="project-list reveal" aria-label="More useful GitHub projects">
-          <article>
-            <span>Python / APIs</span>
-            <h3>Multi-Tenant SaaS Backend</h3>
-            <p>Backend architecture project exploring tenant-aware server design and API structure.</p>
-            <a href="https://github.com/ShashwatSolanki/multi-tenant-saas-backend" target="_blank" rel="noreferrer">Open repo</a>
-          </article>
-          <article>
-            <span>C / Linux</span>
-            <h3>Kernel Module for Process and Memory Tracking</h3>
-            <p>Systems project around process creation and memory allocation visibility inside Linux.</p>
-            <a href="https://github.com/ShashwatSolanki/Kernel-Module-for-Process-Creation-and-Memory-Allocation" target="_blank" rel="noreferrer">Open repo</a>
-          </article>
-          <article>
-            <span>JavaScript</span>
-            <h3>Dribbl</h3>
-            <p>Frontend project focused on interactive web UI construction and JavaScript behavior.</p>
-            <a href="https://github.com/ShashwatSolanki/Dribbl" target="_blank" rel="noreferrer">Open repo</a>
-          </article>
-          <article>
-            <span>C</span>
-            <h3>E-Commerce Platform</h3>
-            <p>C project applying data structures and program flow to a commerce-style application.</p>
-            <a href="https://github.com/ShashwatSolanki/E-Commerce-Platform" target="_blank" rel="noreferrer">Open repo</a>
-          </article>
-          <article>
-            <span>C</span>
-            <h3>Bill Management System</h3>
-            <p>First-year C project for billing workflows, records, and command-line interaction.</p>
-            <a href="https://github.com/ShashwatSolanki/C-Project-Bill-Management" target="_blank" rel="noreferrer">Open repo</a>
-          </article>
-          <article>
-            <span>Python</span>
-            <h3>Python Mini Project</h3>
-            <p>Collaborative first-semester Python project and early software-building milestone.</p>
-            <a href="https://github.com/ShashwatSolanki/Python-mini-project" target="_blank" rel="noreferrer">Open repo</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section achievements reveal" id="achievements">
-        <div class="section-heading compact">
-          <p class="eyebrow">Achievements</p>
-          <h2>Competitive proof points outside the classroom.</h2>
-        </div>
-        <div class="achievement-grid">
-          <article>
-            <span>04</span>
-            <h3>CodeChef Labyrinth</h3>
-            <p>Secured 4th place at PES University among 60+ participants.</p>
-          </article>
-          <article>
-            <span>06</span>
-            <h3>Ather Ignition Hackathon</h3>
-            <p>Secured 6th place by developing a real-time sensor-based tracking device.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section two-column reveal" id="skills">
-        <div class="section-heading">
-          <p class="eyebrow">Stack</p>
-          <h2>Comfortable from frontend interfaces down to OS boundaries.</h2>
-        </div>
-        <div class="skills-grid">
-          <div>
-            <h3>Languages</h3>
-            <p>C, C++, Python, JavaScript, Go</p>
           </div>
-          <div>
-            <h3>Backend</h3>
-            <p>Node.js, Express.js, Flask, REST APIs</p>
-          </div>
-          <div>
-            <h3>Frontend</h3>
-            <p>React.js, Vue.js, responsive interfaces</p>
-          </div>
-          <div>
-            <h3>Data</h3>
-            <p>PostgreSQL, MySQL, MongoDB, raster metadata</p>
-          </div>
-          <div>
-            <h3>Systems</h3>
-            <p>Linux, chroot, namespaces, filesystems, containerization</p>
-          </div>
-          <div>
-            <h3>Tools</h3>
-            <p>Git, GitHub, CI/CD, FFmpeg, Gemini API</p>
+
+          <div class="hero-right" id="hright">
+            <div class="hero-photo">
+              <img
+                src="assets/profile.jpg"
+                alt="Shashwat Solanki"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><svg width=\'48\' height=\'48\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' viewBox=\'0 0 24 24\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M4 20c0-4 3.6-7 8-7s8 3 8 7\'/></svg><span>assets/profile.jpg</span></div>'" />
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <strong>ISRO</strong><span>Research Intern</span>
+              </div>
+              <div class="metric"><strong>8.06</strong><span>CGPA</span></div>
+              <div class="metric">
+                <strong>4th</strong><span>CodeChef Labyrinth</span>
+              </div>
+              <div class="metric">
+                <strong>17</strong><span>GitHub Repos</span>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section class="section credentials reveal">
-        <div>
-          <p class="eyebrow">Education</p>
-          <h2>PES University</h2>
-          <p>B.Tech in Computer Science and Engineering, Aug 2023 - Present</p>
+      <!-- ── What I Build ── -->
+      <div
+        style="
+          border-top: 1px solid var(--line);
+          border-bottom: 1px solid var(--line);
+          padding: 60px 0;
+        ">
+        <div class="container">
+          <div class="build-grid">
+            <div class="build-card reveal">
+              <div class="build-icon">⚙️</div>
+              <h3>Backend Engineering</h3>
+              <p>
+                Scalable APIs, microservices, multi-tenant SaaS backends, and
+                distributed systems using FastAPI, Node.js, and Go.
+              </p>
+            </div>
+            <div class="build-card reveal">
+              <div class="build-icon">🤖</div>
+              <h3>AI Systems</h3>
+              <p>
+                Multi-agent orchestration, RAG pipelines, LLM workflows, and
+                intelligent automation systems.
+              </p>
+            </div>
+            <div class="build-card reveal">
+              <div class="build-icon">🌍</div>
+              <h3>Geospatial Engineering</h3>
+              <p>
+                Geospatial analysis platforms, satellite data visualization,
+                terrain profiling, and remote sensing tools.
+              </p>
+            </div>
+            <div class="build-card reveal">
+              <div class="build-icon">🐳</div>
+              <h3>Systems Programming</h3>
+              <p>
+                Container runtimes, Linux kernel modules, process isolation, and
+                low-level systems development.
+              </p>
+            </div>
+          </div>
         </div>
-        <div>
-          <p class="eyebrow">Certifications</p>
-          <p>
-            Introduction to Data Engineering on Google Cloud, Geospatial Data
-            Analysis Internship at ISRO, Complete Python Bootcamp, C Programming
-            Bootcamp, and HackerRank Problem Solving Basic.
+      </div>
+
+      <!-- ── Projects ── -->
+      <div class="container" id="work">
+        <section>
+          <p class="section-label">Selected Work</p>
+          <h2 class="section-title">
+            Building systems across AI,<br />backend, and geospatial.
+          </h2>
+          <p class="section-sub">
+            Building across AI, backend engineering, geospatial technology, and
+            developer infrastructure — each project solving real engineering
+            challenges.
           </p>
-        </div>
-      </section>
 
-      <section class="section contact reveal" id="contact">
-        <p class="eyebrow">Contact</p>
-        <h2>Have a system to build, optimize, or make clearer?</h2>
-        <p>
-          I am open to internships, research-heavy engineering work, and projects
-          that need practical execution across backend, systems, or data-heavy UI.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:shashwatsolanki.work@gmail.com">Email</a>
-          <a href="https://github.com/ShashwatSolanki" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/solankishashwat/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://leetcode.com/u/OnShoreApple/" target="_blank" rel="noreferrer">LeetCode</a>
+          <div class="projects-grid">
+            <!-- FinMate — featured -->
+            <div class="project-featured reveal">
+              <div class="project-featured-content">
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 0.75rem;
+                      margin-bottom: 1.25rem;
+                    ">
+                    <span class="project-tag">⭐ Featured</span>
+                    <span class="project-tag">AI / Backend</span>
+                  </div>
+                  <h3 class="project-name-lg">FinMate</h3>
+                  <p class="project-desc-lg">
+                    AI-powered financial assistant built with a modular
+                    multi-agent architecture. Specialized agents collaborate to
+                    handle budgeting, investment analysis, invoice generation,
+                    and personalized financial guidance — all backed by a RAG
+                    memory system.
+                  </p>
+                  <ul class="project-points">
+                    <li>
+                      Centralized orchestrator routing requests to
+                      domain-specific agents
+                    </li>
+                    <li>
+                      Long-term memory via RAG with MiniLM embeddings + semantic
+                      search
+                    </li>
+                    <li>
+                      Budget planning, investment analysis, and invoice
+                      generation
+                    </li>
+                    <li>
+                      Context-aware responses across sessions using stored
+                      financial history
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <div class="tag-list" style="margin-bottom: 1.25rem">
+                    <span class="tag">FastAPI</span
+                    ><span class="tag">PostgreSQL</span
+                    ><span class="tag">React</span> <span class="tag">LLM</span
+                    ><span class="tag">RAG</span
+                    ><span class="tag">Multi-Agent</span>
+                  </div>
+                  <div class="project-link-row">
+                    <a
+                      href="https://github.com/ShashwatSolanki/FinMate"
+                      target="_blank"
+                      rel="noopener"
+                      class="project-link"
+                      >View on GitHub →</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="project-featured-img">
+                <img
+                  src="assets/finmate.jpg"
+                  alt="FinMate"
+                  onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><svg width=\'40\' height=\'40\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' viewBox=\'0 0 24 24\'><rect x=\'2\' y=\'3\' width=\'20\' height=\'14\' rx=\'2\'/><path d=\'M8 21h8M12 17v4\'/></svg><span>assets/finmate.jpg</span></div>'" />
+              </div>
+            </div>
+
+            <!-- Row: Vedant, RIDaM, Docksmith -->
+            <div class="projects-row">
+              <div class="project-card reveal">
+                <div class="project-header">
+                  <span class="project-tag">Geospatial</span>
+                  <a
+                    href="https://github.com/ShashwatSolanki/Vedant"
+                    target="_blank"
+                    rel="noopener"
+                    class="project-link"
+                    style="font-size: 0.75rem"
+                    >↗</a
+                  >
+                </div>
+                <div>
+                  <p class="project-name">Vedant</p>
+                  <p class="project-desc">
+                    Cesium-powered geospatial analysis platform developed at
+                    ISRO. Enables terrain profiling, viewshed computation, solar
+                    rooftop estimation, and large-scale satellite data
+                    visualization through a modular plugin architecture.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">CesiumJS</span
+                  ><span class="tag">Vue.js</span
+                  ><span class="tag">Electron</span
+                  ><span class="tag">ISRO</span>
+                </div>
+              </div>
+
+              <div class="project-card reveal">
+                <div class="project-header">
+                  <span class="project-tag">Geospatial</span>
+                  <a
+                    href="https://github.com/ShashwatSolanki/RIDaM"
+                    target="_blank"
+                    rel="noopener"
+                    class="project-link"
+                    style="font-size: 0.75rem"
+                    >↗</a
+                  >
+                </div>
+                <div>
+                  <p class="project-name">RIDaM</p>
+                  <p class="project-desc">
+                    Enterprise raster imagery management platform for indexing,
+                    searching, and visualizing geospatial imagery. Provides
+                    metadata registration, filtering, dashboard analytics, and
+                    retrieval for large satellite datasets.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Node.js</span
+                  ><span class="tag">PostgreSQL</span
+                  ><span class="tag">Vue.js</span
+                  ><span class="tag">Highcharts</span>
+                </div>
+              </div>
+
+              <div class="project-card reveal">
+                <div class="project-header">
+                  <span class="project-tag">Systems</span>
+                  <a
+                    href="https://github.com/ShashwatSolanki/Docksmith"
+                    target="_blank"
+                    rel="noopener"
+                    class="project-link"
+                    style="font-size: 0.75rem"
+                    >↗</a
+                  >
+                </div>
+                <div>
+                  <p class="project-name">Docksmith</p>
+                  <p class="project-desc">
+                    Docker-inspired container runtime built from scratch.
+                    Implements a Dockerfile-like build system, layered
+                    filesystem, content-addressable storage, and process
+                    isolation using Linux namespaces and chroot.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Go</span><span class="tag">Linux</span
+                  ><span class="tag">Namespaces</span
+                  ><span class="tag">Filesystems</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row: Dribbl, Multi-Tenant, AI Reel -->
+            <div class="projects-row">
+              <div class="project-card reveal">
+                <div class="project-header">
+                  <span class="project-tag">Backend</span>
+                  <a
+                    href="https://github.com/ShashwatSolanki/Dribbl"
+                    target="_blank"
+                    rel="noopener"
+                    class="project-link"
+                    style="font-size: 0.75rem"
+                    >↗</a
+                  >
+                </div>
+                <div>
+                  <p class="project-name">Dribbl</p>
+                  <p class="project-desc">
+                    WhatsApp-inspired real-time messaging platform. Enables
+                    instant message delivery via WebSockets, persistent
+                    conversation history, and a responsive cross-device
+                    experience.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">WebSockets</span
+                  ><span class="tag">React</span
+                  ><span class="tag">Node.js</span>
+                </div>
+              </div>
+
+              <div class="project-card reveal">
+                <div class="project-header">
+                  <span class="project-tag">Backend</span>
+                  <a
+                    href="https://github.com/ShashwatSolanki/multi-tenant-saas-backend"
+                    target="_blank"
+                    rel="noopener"
+                    class="project-link"
+                    style="font-size: 0.75rem"
+                    >↗</a
+                  >
+                </div>
+                <div>
+                  <p class="project-name">Multi-Tenant SaaS</p>
+                  <p class="project-desc">
+                    Production-style multi-tenant backend with strict tenant
+                    isolation, JWT authentication, role-based access control,
+                    and scalable PostgreSQL-backed data management.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">FastAPI</span
+                  ><span class="tag">PostgreSQL</span
+                  ><span class="tag">JWT</span><span class="tag">RBAC</span>
+                </div>
+              </div>
+
+              <div class="project-card reveal">
+                <div class="project-header">
+                  <span class="project-tag">AI</span>
+                  <a
+                    href="https://github.com/ShashwatSolanki/ai_reel_generator"
+                    target="_blank"
+                    rel="noopener"
+                    class="project-link"
+                    style="font-size: 0.75rem"
+                    >↗</a
+                  >
+                </div>
+                <div>
+                  <p class="project-name">AI Reel Generator</p>
+                  <p class="project-desc">
+                    End-to-end pipeline that converts PDFs and presentations
+                    into short-form video reels using LLM summarization,
+                    automated scripting, and FFmpeg media rendering.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Python</span><span class="tag">LLM</span
+                  ><span class="tag">FFmpeg</span
+                  ><span class="tag">FastAPI</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row: Kernel, N-Queen, E-Commerce -->
+            <div class="projects-row">
+              <div class="project-card reveal">
+                <div class="project-header">
+                  <span class="project-tag">Systems</span>
+                </div>
+                <div>
+                  <p class="project-name">Kernel Module</p>
+                  <p class="project-desc">
+                    Linux kernel module for monitoring process creation, memory
+                    allocation, and OS activity. Interacts directly with kernel
+                    data structures for low-level system visibility.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">C</span><span class="tag">Linux Kernel</span
+                  ><span class="tag">OS</span>
+                </div>
+              </div>
+
+              <div class="project-card reveal">
+                <div class="project-header">
+                  <span class="project-tag">Algorithms</span>
+                </div>
+                <div>
+                  <p class="project-name">N-Queen Solver</p>
+                  <p class="project-desc">
+                    Interactive visualization of the N-Queens problem using
+                    backtracking and constraint-based search. Demonstrates
+                    recursive problem solving and state-space exploration
+                    through a graphical interface.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">Python</span
+                  ><span class="tag">Algorithms</span
+                  ><span class="tag">Visualization</span>
+                </div>
+              </div>
+
+              <div class="project-card reveal">
+                <div class="project-header">
+                  <span class="project-tag">C / DSA</span>
+                </div>
+                <div>
+                  <p class="project-name">E-Commerce Platform</p>
+                  <p class="project-desc">
+                    Console-based e-commerce simulation implementing product
+                    management, inventory tracking, and order processing using
+                    arrays, linked lists, and classic data structures.
+                  </p>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">C</span
+                  ><span class="tag">Data Structures</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ── Experience ── -->
+      <div style="border-top: 1px solid var(--line)">
+        <div class="container" id="experience">
+          <section>
+            <p class="section-label">Experience</p>
+            <h2 class="section-title">Where I've worked.</h2>
+
+            <div class="work-item reveal">
+              <div class="work-meta">
+                <p class="work-period">2024 — Present</p>
+                <p class="work-company">ISRO — SAC</p>
+              </div>
+              <div>
+                <p class="work-role">Research Intern</p>
+                <p class="work-desc">
+                  Developed Vedant, a CesiumJS-powered geospatial analysis
+                  platform for terrain profiling, viewshed analysis, and solar
+                  rooftop estimation. Also built RIDaM, an enterprise raster
+                  imagery management system for indexing and managing
+                  large-scale satellite datasets used across teams at the Space
+                  Applications Centre.
+                </p>
+                <div class="work-tags">
+                  <span class="tag">CesiumJS</span
+                  ><span class="tag">Vue.js</span
+                  ><span class="tag">Node.js</span
+                  ><span class="tag">PostgreSQL</span
+                  ><span class="tag">ElectronJS</span
+                  ><span class="tag">Geospatial</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-item reveal">
+              <div class="work-meta">
+                <p class="work-period">2022 — Present</p>
+                <p class="work-company">PES University</p>
+              </div>
+              <div>
+                <p class="work-role">B.Tech, Computer Science & Engineering</p>
+                <p class="work-desc">
+                  Coursework spanning operating systems, distributed systems,
+                  algorithms, and database engineering. Applied systems
+                  knowledge through projects in container runtimes, kernel
+                  programming, and multi-agent AI. Active on competitive
+                  programming platforms — ranked 4th in CodeChef Labyrinth
+                  contest.
+                </p>
+                <div class="work-tags">
+                  <span class="tag">CGPA 8.06</span
+                  ><span class="tag">Operating Systems</span
+                  ><span class="tag">DSA</span
+                  ><span class="tag">Distributed Systems</span>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
+
+      <!-- ── Skills ── -->
+      <div style="border-top: 1px solid var(--line)">
+        <div class="container" id="skills">
+          <section>
+            <p class="section-label">Skills</p>
+            <h2 class="section-title">Tools of the trade.</h2>
+            <p class="section-sub">
+              Technologies I use to build backend systems, AI pipelines, and
+              geospatial platforms.
+            </p>
+
+            <div class="skills-grid">
+              <div class="skill-group reveal">
+                <p class="skill-group-label">Languages</p>
+                <div class="skill-pills">
+                  <span class="skill-pill">Python</span>
+                  <span class="skill-pill">JavaScript</span>
+                  <span class="skill-pill">Go</span>
+                  <span class="skill-pill">Java</span>
+                  <span class="skill-pill">C</span>
+                </div>
+              </div>
+              <div class="skill-group reveal">
+                <p class="skill-group-label">Backend</p>
+                <div class="skill-pills">
+                  <span class="skill-pill">FastAPI</span>
+                  <span class="skill-pill">Node.js</span>
+                  <span class="skill-pill">Express</span>
+                  <span class="skill-pill">REST APIs</span>
+                  <span class="skill-pill">WebSockets</span>
+                </div>
+              </div>
+              <div class="skill-group reveal">
+                <p class="skill-group-label">Databases</p>
+                <div class="skill-pills">
+                  <span class="skill-pill">PostgreSQL</span>
+                  <span class="skill-pill">MongoDB</span>
+                  <span class="skill-pill">SQLAlchemy</span>
+                  <span class="skill-pill">Vector DBs</span>
+                </div>
+              </div>
+              <div class="skill-group reveal">
+                <p class="skill-group-label">AI / ML</p>
+                <div class="skill-pills">
+                  <span class="skill-pill">LLM Workflows</span>
+                  <span class="skill-pill">Multi-Agent</span>
+                  <span class="skill-pill">RAG Pipelines</span>
+                  <span class="skill-pill">MiniLM</span>
+                  <span class="skill-pill">Embeddings</span>
+                </div>
+              </div>
+              <div class="skill-group reveal">
+                <p class="skill-group-label">Frontend</p>
+                <div class="skill-pills">
+                  <span class="skill-pill">React</span>
+                  <span class="skill-pill">Vue.js</span>
+                  <span class="skill-pill">TypeScript</span>
+                  <span class="skill-pill">CesiumJS</span>
+                  <span class="skill-pill">ElectronJS</span>
+                </div>
+              </div>
+              <div class="skill-group reveal">
+                <p class="skill-group-label">Systems</p>
+                <div class="skill-pills">
+                  <span class="skill-pill">Docker</span>
+                  <span class="skill-pill">Linux</span>
+                  <span class="skill-pill">Namespaces</span>
+                  <span class="skill-pill">Git</span>
+                  <span class="skill-pill">Kernel Modules</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- ── Contact ── -->
+      <div style="border-top: 1px solid var(--line)">
+        <div class="container" id="contact">
+          <section>
+            <div class="contact-wrap">
+              <p class="section-label" style="justify-content: center">
+                Contact
+              </p>
+              <h2 class="section-title">
+                Let's Build Something<br />Meaningful.
+              </h2>
+              <p>
+                Whether it's backend infrastructure, an AI system, a geospatial
+                platform, or something at the intersection of all three — I'm
+                open to exploring the right opportunity.
+              </p>
+              <div class="contact-actions">
+                <a
+                  href="mailto:shashwatsolanki.work@gmail.com"
+                  class="btn btn-primary"
+                  >Send an Email →</a
+                >
+                <a
+                  href="https://linkedin.com/in/shashwat-solanki-546337152/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-ghost"
+                  >LinkedIn</a
+                >
+              </div>
+              <div class="social-row">
+                <a
+                  href="https://github.com/ShashwatSolanki"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-link">
+                  <svg
+                    width="15"
+                    height="15"
+                    fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                  GitHub
+                </a>
+                <a
+                  href="https://leetcode.com/OnShoreApple"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-link"
+                  >⚡ LeetCode</a
+                >
+                <a
+                  href="https://codeforces.com/profile/OnShoreApple"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-link"
+                  >🏆 Codeforces</a
+                >
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
 
-    <footer class="footer">
-      <p>Shashwat Solanki</p>
-      <p>Crafting thoughtful digital experiences with simplicity and purpose.</p>
+    <footer>
+      <p>© 2025 Shashwat Solanki</p>
+      <p>
+        Crafting thoughtful digital experiences with simplicity and purpose.
+      </p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      // Progress bar
+      const prog = document.getElementById("progress");
+      window.addEventListener(
+        "scroll",
+        () => {
+          const d = document.documentElement;
+          prog.style.width =
+            (d.scrollTop / (d.scrollHeight - d.clientHeight)) * 100 + "%";
+        },
+        { passive: true }
+      );
+
+      // Header scroll state
+      const hdr = document.getElementById("header");
+      window.addEventListener(
+        "scroll",
+        () => {
+          hdr.classList.toggle("scrolled", window.scrollY > 20);
+        },
+        { passive: true }
+      );
+
+      // Reveal on scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el, i) => {
+        el.style.transitionDelay = (i % 3) * 0.08 + "s";
+        observer.observe(el);
+      });
+
+      // Hero entrance animation
+      const heroEls = [
+        { id: "ey", delay: 0 },
+        { id: "hn", delay: 120 },
+        { id: "hr", delay: 220 },
+        { id: "av", delay: 320 },
+        { id: "hb", delay: 400 },
+        { id: "ha", delay: 480 },
+        { id: "hright", delay: 200 },
+      ];
+
+      heroEls.forEach(({ id, delay }) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.style.opacity = "0";
+        el.style.transform =
+          id === "hright" ? "translateX(24px)" : "translateY(20px)";
+        el.style.transition =
+          "opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1)";
+        setTimeout(() => {
+          el.style.opacity = "1";
+          el.style.transform = "none";
+        }, delay + 80);
+      });
+    </script>
   </body>
 </html>
