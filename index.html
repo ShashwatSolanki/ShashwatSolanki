@@ -875,6 +875,285 @@
           transition-duration: 0.01ms !important;
         }
       }
+
+      /* ── Project Drawer ── */
+      .drawer-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        z-index: 200;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .drawer-overlay.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(680px, 100vw);
+        height: 100vh;
+        background: var(--surface);
+        border-left: 1px solid var(--line);
+        z-index: 201;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow: hidden;
+      }
+      .drawer.open {
+        transform: translateX(0);
+      }
+
+      .drawer-close {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        color: var(--muted-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s;
+        z-index: 10;
+        font-size: 1.1rem;
+        line-height: 1;
+      }
+      .drawer-close:hover {
+        background: var(--surface-3);
+        color: var(--ink);
+      }
+
+      /* Image carousel */
+      .drawer-carousel {
+        position: relative;
+        width: 100%;
+        height: 280px;
+        background: var(--surface-2);
+        flex-shrink: 0;
+        overflow: hidden;
+      }
+
+      .carousel-track {
+        display: flex;
+        height: 100%;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .carousel-slide {
+        min-width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .carousel-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        height: 100%;
+        color: var(--muted);
+      }
+      .carousel-placeholder .ph-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        background: var(--surface-3);
+        border: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+      }
+      .carousel-placeholder p {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: rgba(9, 9, 11, 0.75);
+        border: 1px solid var(--line);
+        color: var(--ink-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.15s;
+        font-size: 0.85rem;
+        z-index: 5;
+      }
+      .carousel-btn:hover {
+        background: rgba(9, 9, 11, 0.95);
+      }
+      .carousel-btn.prev {
+        left: 0.75rem;
+      }
+      .carousel-btn.next {
+        right: 0.75rem;
+      }
+
+      .carousel-dots {
+        position: absolute;
+        bottom: 0.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.4rem;
+        z-index: 5;
+      }
+      .carousel-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: background 0.2s, width 0.2s;
+      }
+      .carousel-dot.active {
+        background: var(--accent);
+        width: 18px;
+        border-radius: 3px;
+      }
+
+      /* Drawer body */
+      .drawer-body {
+        flex: 1;
+        overflow-y: auto;
+        padding: 2rem;
+        scrollbar-width: thin;
+        scrollbar-color: var(--line) transparent;
+      }
+      .drawer-body::-webkit-scrollbar {
+        width: 4px;
+      }
+      .drawer-body::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .drawer-body::-webkit-scrollbar-thumb {
+        background: var(--line);
+        border-radius: 2px;
+      }
+
+      .drawer-meta {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+      }
+
+      .drawer-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--ink);
+        letter-spacing: -0.025em;
+        margin-bottom: 0.75rem;
+        line-height: 1.15;
+      }
+
+      .drawer-desc {
+        font-size: 0.92rem;
+        color: var(--muted-2);
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+      }
+
+      .drawer-points {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+        margin-bottom: 1.75rem;
+        padding: 1.25rem;
+        background: var(--surface-2);
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+      }
+      .drawer-points li {
+        font-size: 0.85rem;
+        color: var(--muted-2);
+        display: flex;
+        align-items: flex-start;
+        gap: 0.65rem;
+        line-height: 1.5;
+      }
+      .drawer-points li::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+        margin-top: 0.45em;
+      }
+
+      .drawer-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .drawer-actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--line);
+      }
+
+      /* Click hint on cards */
+      .project-card,
+      .project-featured {
+        cursor: pointer;
+      }
+      .click-hint {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: auto;
+        padding-top: 0.75rem;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .project-card:hover .click-hint,
+      .project-featured:hover .click-hint {
+        opacity: 1;
+      }
     </style>
   </head>
   <body>
@@ -950,9 +1229,9 @@
           <div class="hero-right" id="hright">
             <div class="hero-photo">
               <img
-                src="assets/Profile.jpeg"
+                src="assets/profile.jpeg"
                 alt="Shashwat Solanki"
-                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><svg width=\'48\' height=\'48\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' viewBox=\'0 0 24 24\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M4 20c0-4 3.6-7 8-7s8 3 8 7\'/></svg><span>assets/Profile.jpeg</span></div>'" />
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><svg width=\'48\' height=\'48\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' viewBox=\'0 0 24 24\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M4 20c0-4 3.6-7 8-7s8 3 8 7\'/></svg><span>assets/profile.jpeg</span></div>'" />
             </div>
             <div class="metrics">
               <div class="metric">
@@ -963,7 +1242,7 @@
                 <strong>4th</strong><span>CodeChef Labyrinth</span>
               </div>
               <div class="metric">
-                <strong>6th</strong><span>Ather Hackathon</span>
+                <strong>17</strong><span>GitHub Repos</span>
               </div>
             </div>
           </div>
@@ -1029,8 +1308,8 @@
           </p>
 
           <div class="projects-grid">
-            <!-- FinMate — featured -->
-            <div class="project-featured reveal">
+            <!-- FinMate - featured -->
+            <div class="project-featured reveal" data-project="finmate">
               <div class="project-featured-content">
                 <div>
                   <div
@@ -1086,6 +1365,7 @@
                       class="project-link"
                       >View on GitHub →</a
                     >
+                    <span class="click-hint">· click card for screenshots</span>
                   </div>
                 </div>
               </div>
@@ -1099,7 +1379,7 @@
 
             <!-- Row: Vedant, RIDaM, Docksmith -->
             <div class="projects-row">
-              <div class="project-card reveal">
+              <div class="project-card reveal" data-project="vedant">
                 <div class="project-header">
                   <span class="project-tag">Geospatial</span>
                 </div>
@@ -1118,13 +1398,14 @@
                   ><span class="tag">Electron</span
                   ><span class="tag">ISRO</span>
                 </div>
+                <span class="click-hint">↗ click to preview</span>
               </div>
 
-              <div class="project-card reveal">
+              <div class="project-card reveal" data-project="ridam">
                 <div class="project-header">
                   <span class="project-tag">Geospatial</span>
                   <a
-                    href="https://github.com/Shashwat-Solanki/ridam"
+                    href="https://github.com/Shashwat-Solanki/RIDaM"
                     target="_blank"
                     rel="noopener"
                     class="project-link"
@@ -1135,7 +1416,7 @@
                 <div>
                   <p class="project-name">RIDaM</p>
                   <p class="project-desc">
-                    Enterprise Raster Imagery Management platform for indexing,
+                    Enterprise raster imagery management platform for indexing,
                     searching, and visualizing geospatial imagery. Provides
                     metadata registration, filtering, dashboard analytics, and
                     retrieval for large satellite datasets.
@@ -1147,9 +1428,10 @@
                   ><span class="tag">Vue.js</span
                   ><span class="tag">Highcharts</span>
                 </div>
+                <span class="click-hint">↗ click to preview</span>
               </div>
 
-              <div class="project-card reveal">
+              <div class="project-card reveal" data-project="docksmith">
                 <div class="project-header">
                   <span class="project-tag">Systems</span>
                   <a
@@ -1175,12 +1457,13 @@
                   ><span class="tag">Namespaces</span
                   ><span class="tag">Filesystems</span>
                 </div>
+                <span class="click-hint">↗ click to preview</span>
               </div>
             </div>
 
             <!-- Row: Dribbl, Multi-Tenant, AI Reel -->
             <div class="projects-row">
-              <div class="project-card reveal">
+              <div class="project-card reveal" data-project="dribbl">
                 <div class="project-header">
                   <span class="project-tag">Backend</span>
                   <a
@@ -1206,9 +1489,10 @@
                   ><span class="tag">React</span
                   ><span class="tag">Node.js</span>
                 </div>
+                <span class="click-hint">↗ click to preview</span>
               </div>
 
-              <div class="project-card reveal">
+              <div class="project-card reveal" data-project="multitenant">
                 <div class="project-header">
                   <span class="project-tag">Backend</span>
                   <a
@@ -1233,9 +1517,10 @@
                   ><span class="tag">PostgreSQL</span
                   ><span class="tag">JWT</span><span class="tag">RBAC</span>
                 </div>
+                <span class="click-hint">↗ click to preview</span>
               </div>
 
-              <div class="project-card reveal">
+              <div class="project-card reveal" data-project="aireel">
                 <div class="project-header">
                   <span class="project-tag">AI</span>
                   <a
@@ -1260,16 +1545,18 @@
                   ><span class="tag">FFmpeg</span
                   ><span class="tag">FastAPI</span>
                 </div>
+                <span class="click-hint">↗ click to preview</span>
               </div>
             </div>
 
             <!-- Row: Kernel, N-Queen, E-Commerce -->
             <div class="projects-row">
-              <div class="project-card reveal">
+              <div class="project-card reveal" data-project="kernel">
                 <div class="project-header">
                   <span class="project-tag">Systems</span>
                   <a
                     href="https://github.com/ShashwatSolanki/Kernel-Module-for-Process-Creation-and-Memory-Allocation"
+                    href="https://github.com/ShashwatSolanki/Python-mini-project"
                     target="_blank"
                     rel="noopener"
                     class="project-link"
@@ -1289,9 +1576,10 @@
                   <span class="tag">C</span><span class="tag">Linux Kernel</span
                   ><span class="tag">OS</span>
                 </div>
+                <span class="click-hint">↗ click to preview</span>
               </div>
 
-              <div class="project-card reveal">
+              <div class="project-card reveal" data-project="nqueen">
                 <div class="project-header">
                   <span class="project-tag">Algorithms</span>
                   <a
@@ -1317,9 +1605,10 @@
                   ><span class="tag">Algorithms</span
                   ><span class="tag">Visualization</span>
                 </div>
+                <span class="click-hint">↗ click to preview</span>
               </div>
 
-              <div class="project-card reveal">
+              <div class="project-card reveal" data-project="ecommerce">
                 <div class="project-header">
                   <span class="project-tag">C / DSA</span>
                   <a
@@ -1343,6 +1632,7 @@
                   <span class="tag">C</span
                   ><span class="tag">Data Structures</span>
                 </div>
+                <span class="click-hint">↗ click to preview</span>
               </div>
             </div>
           </div>
@@ -1394,7 +1684,7 @@
                   algorithms, and database engineering. Applied systems
                   knowledge through projects in container runtimes, kernel
                   programming, and multi-agent AI. Active on competitive
-                  programming platforms — ranked 4th in CodeChef Labyrinth
+                  programming platforms - ranked 4th in CodeChef Labyrinth
                   contest.
                 </p>
                 <div class="work-tags">
@@ -1498,7 +1788,7 @@
               </h2>
               <p>
                 Whether it's backend infrastructure, an AI system, a geospatial
-                platform, or something at the intersection of all three — I'm
+                platform, or something at the intersection of all three - I'm
                 open to exploring the right opportunity.
               </p>
               <div class="contact-actions">
@@ -1559,8 +1849,413 @@
       </p>
     </footer>
 
+    <!-- ── Project Drawer ── -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div
+      class="drawer"
+      id="drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Project details">
+      <button class="drawer-close" id="drawerClose" aria-label="Close">
+        ✕
+      </button>
+
+      <div class="drawer-carousel" id="drawerCarousel">
+        <div class="carousel-track" id="carouselTrack"></div>
+        <button
+          class="carousel-btn prev"
+          id="carouselPrev"
+          aria-label="Previous image">
+          ‹
+        </button>
+        <button
+          class="carousel-btn next"
+          id="carouselNext"
+          aria-label="Next image">
+          ›
+        </button>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+
+      <div class="drawer-body">
+        <div class="drawer-meta" id="drawerMeta"></div>
+        <h2 class="drawer-title" id="drawerTitle"></h2>
+        <p class="drawer-desc" id="drawerDesc"></p>
+        <ul class="drawer-points" id="drawerPoints"></ul>
+        <div class="drawer-tags" id="drawerTags"></div>
+        <div class="drawer-actions" id="drawerActions"></div>
+      </div>
+    </div>
+
     <script>
-      // Progress bar
+      /* ─── Project data ─── */
+      const PROJECTS = {
+        finmate: {
+          name: "FinMate",
+          tag: "⭐ Featured · AI / Backend",
+          desc: "AI-powered financial assistant built with a modular multi-agent architecture. Specialized agents collaborate for budgeting, investment analysis, invoice generation, and personalized financial guidance - all backed by a RAG memory pipeline that retains context across sessions.",
+          points: [
+            "Centralized orchestrator routing user requests to domain-specific agents",
+            "Long-term memory via RAG with MiniLM embeddings and semantic search",
+            "Budget planning, investment analysis, and invoice generation modules",
+            "Context-aware responses using stored financial history across sessions",
+            "Built on FastAPI, PostgreSQL, React, and modern LLM workflows",
+          ],
+          tags: [
+            "FastAPI",
+            "PostgreSQL",
+            "React",
+            "LLM",
+            "RAG",
+            "Multi-Agent",
+            "Python",
+          ],
+          github: "https://github.com/ShashwatSolanki/FinMate",
+          images: [
+            "assets/finmate.jpeg",
+            "assets/finmate-2.jpeg",
+            "assets/finmate-3.jpeg",
+          ],
+          icon: "🤖",
+        },
+        vedant: {
+          name: "Vedant",
+          tag: "Geospatial · ISRO",
+          desc: "Cesium-powered geospatial analysis platform developed at ISRO's Space Applications Centre. Visualizes large-scale satellite datasets and performs advanced spatial analysis including terrain profiling, viewshed computation, area measurement, and solar rooftop potential assessment.",
+          points: [
+            "Terrain profiling and line-of-sight analysis across large geographies",
+            "Viewshed computation and area measurement tools",
+            "Solar rooftop potential estimation for urban planning",
+            "Modular plugin architecture - new tools integrate without core changes",
+            "Built with CesiumJS, Vue.js, and ElectronJS for desktop deployment",
+          ],
+          tags: [
+            "CesiumJS",
+            "Vue.js",
+            "ElectronJS",
+            "Geospatial",
+            "ISRO",
+            "JavaScript",
+          ],
+          github: "https://github.com/ShashwatSolanki/Vedant",
+          images: ["assets/vedant.jpeg", "assets/vedant-2.jpeg"],
+          icon: "🌍",
+        },
+        ridam: {
+          name: "RIDaM",
+          tag: "Geospatial · ISRO",
+          desc: "Enterprise raster imagery management platform for indexing, searching, and visualizing geospatial imagery and metadata. Provides metadata registration, filtering, editing, and retrieval capabilities alongside analytical dashboards for monitoring dataset usage across remote sensing teams.",
+          points: [
+            "Metadata registration, indexing, filtering, and retrieval at scale",
+            "Dashboard analytics for monitoring dataset usage and statistics",
+            "Search and edit capabilities across large satellite imagery collections",
+            "Built with Node.js, PostgreSQL, Vue.js, and Highcharts",
+            "Streamlines geospatial asset management across teams at ISRO",
+          ],
+          tags: [
+            "Node.js",
+            "PostgreSQL",
+            "Vue.js",
+            "Highcharts",
+            "Geospatial",
+            "ISRO",
+          ],
+          github: "https://github.com/ShashwatSolanki/RIDaM",
+          images: ["assets/ridam.jpeg", "assets/ridam-2.jpeg"],
+          icon: "🛰️",
+        },
+        docksmith: {
+          name: "Docksmith",
+          tag: "Systems Programming",
+          desc: "Docker-inspired container runtime and image builder built from scratch to understand the internals of modern container technologies. Implements a Dockerfile-like build system, layered filesystem architecture, content-addressable storage, and process isolation through Linux namespaces.",
+          points: [
+            "Dockerfile-inspired build system for reproducible image generation",
+            "Layered filesystem architecture with content-addressable storage",
+            "Process isolation via Linux namespaces and chroot environments",
+            "Deterministic image builds with layer caching for efficiency",
+            "Practical deep-dive into OS internals and container orchestration",
+          ],
+          tags: [
+            "Go",
+            "Linux",
+            "Namespaces",
+            "Filesystems",
+            "chroot",
+            "Systems",
+          ],
+          github: "https://github.com/ShashwatSolanki/Docksmith",
+          images: ["assets/docksmith.jpeg", "assets/docksmith-2.jpeg"],
+          icon: "🐳",
+        },
+        dribbl: {
+          name: "Dribbl",
+          tag: "Backend · Real-Time",
+          desc: "WhatsApp-inspired real-time messaging platform supporting instant message delivery, persistent conversation history, and responsive cross-device messaging. Focuses on real-time communication architecture, state synchronization, and scalable messaging workflows.",
+          points: [
+            "Instant message delivery through WebSocket connections",
+            "Persistent conversation history across sessions",
+            "Responsive experience across desktop and mobile devices",
+            "Real-time state synchronization and user presence indicators",
+          ],
+          tags: ["WebSockets", "React", "Node.js", "MongoDB", "Real-Time"],
+          github: "https://github.com/ShashwatSolanki/Dribbl",
+          images: ["assets/dribbl.jpeg", "assets/dribbl-2.jpeg"],
+          icon: "💬",
+        },
+        multitenant: {
+          name: "Multi-Tenant SaaS",
+          tag: "Backend · Architecture",
+          desc: "Production-style multi-tenant backend where multiple organizations share common infrastructure while maintaining strict data isolation. Implements JWT authentication, role-based access control, and scalable PostgreSQL-backed data management following clean architecture principles.",
+          points: [
+            "Strict tenant-aware resource access and data isolation",
+            "JWT authentication with refresh token rotation",
+            "Role-based access control (RBAC) across tenant boundaries",
+            "Scalable PostgreSQL data modeling for multi-tenant workloads",
+            "Clean architecture with security best practices throughout",
+          ],
+          tags: [
+            "FastAPI",
+            "PostgreSQL",
+            "SQLAlchemy",
+            "JWT",
+            "RBAC",
+            "Python",
+          ],
+          github:
+            "https://github.com/ShashwatSolanki/multi-tenant-saas-backend",
+          images: ["assets/multitenant.jpeg"],
+          icon: "🏗️",
+        },
+        aireel: {
+          name: "AI Reel Generator",
+          tag: "AI · Automation",
+          desc: "End-to-end pipeline that converts PDFs and presentations into short-form video reels using LLM summarization and automated media generation. Combines AI-driven content extraction, structured scripting, and FFmpeg-based video rendering into a single automated workflow.",
+          points: [
+            "Extracts and summarizes content from PDFs and PPTX files using LLMs",
+            "Generates structured video scripts from document content",
+            "Renders final short-form videos through automated FFmpeg pipelines",
+            "Single end-to-end workflow from document input to video output",
+          ],
+          tags: [
+            "Python",
+            "LLM",
+            "FFmpeg",
+            "FastAPI",
+            "Document Processing",
+            "TypeScript",
+          ],
+          github: "https://github.com/ShashwatSolanki/ai_reel_generator",
+          images: ["assets/aireel.jpeg"],
+          icon: "🎬",
+        },
+        kernel: {
+          name: "Kernel Module",
+          tag: "Systems · OS",
+          desc: "Linux kernel module for monitoring process creation, memory allocation, and low-level operating system activity. Interacts directly with kernel data structures to provide deep visibility into how processes are created, managed, and allocated resources within the OS.",
+          points: [
+            "Monitors process lifecycle events at the kernel level",
+            "Tracks memory allocation behavior and patterns",
+            "Interacts directly with kernel-level data structures",
+            "Demonstrates understanding of OS internals and memory management",
+          ],
+          tags: ["C", "Linux Kernel", "OS", "Systems", "Memory Management"],
+          github: "https://github.com/ShashwatSolanki",
+          images: ["assets/kernel.jpeg"],
+          icon: "⚙️",
+        },
+        nqueen: {
+          name: "N-Queen Solver",
+          tag: "Algorithms · Visualization",
+          desc: "Interactive visualization of the N-Queens problem using backtracking algorithms and constraint-based search. Demonstrates recursive problem solving, constraint validation, and state-space exploration through a graphical interface that shows the algorithm thinking in real time.",
+          points: [
+            "Backtracking algorithm with constraint-based pruning",
+            "Live visualization of state-space exploration",
+            "Interactive board size control",
+            "Demonstrates algorithmic thinking and optimization techniques",
+          ],
+          tags: [
+            "Python",
+            "Algorithms",
+            "Backtracking",
+            "Visualization",
+            "DSA",
+          ],
+          github: "https://github.com/ShashwatSolanki",
+          images: ["assets/nqueen.jpeg"],
+          icon: "♛",
+        },
+        ecommerce: {
+          name: "E-Commerce Platform",
+          tag: "C · Data Structures",
+          desc: "Console-based e-commerce simulation implementing product management, customer workflows, and order processing using fundamental data structures. Built in C with arrays, linked lists, searching algorithms, and structured program design as a foundational systems project.",
+          points: [
+            "Product catalog management and inventory tracking",
+            "Customer interaction and order processing workflows",
+            "Implemented using arrays, linked lists, and search algorithms",
+            "Foundational experience in software engineering and system design",
+          ],
+          tags: ["C", "Data Structures", "Algorithms", "Systems", "DSA"],
+          github: "https://github.com/ShashwatSolanki",
+          images: ["assets/ecommerce.jpeg"],
+          icon: "🛒",
+        },
+      };
+
+      /* ─── Carousel state ─── */
+      let currentSlide = 0;
+      let totalSlides = 0;
+
+      function buildCarousel(images, icon, name) {
+        const track = document.getElementById("carouselTrack");
+        const dots = document.getElementById("carouselDots");
+        track.innerHTML = "";
+        dots.innerHTML = "";
+        totalSlides = images.length;
+        currentSlide = 0;
+
+        images.forEach((src, i) => {
+          const slide = document.createElement("div");
+          slide.className = "carousel-slide";
+
+          const img = document.createElement("img");
+          img.alt = `${name} screenshot ${i + 1}`;
+          img.src = src;
+          img.onerror = () => {
+            slide.innerHTML = `
+          <div class="carousel-placeholder">
+            <div class="ph-icon">${icon}</div>
+            <p>${src}</p>
+          </div>`;
+          };
+          slide.appendChild(img);
+          track.appendChild(slide);
+
+          const dot = document.createElement("div");
+          dot.className = "carousel-dot" + (i === 0 ? " active" : "");
+          dot.addEventListener("click", () => goToSlide(i));
+          dots.appendChild(dot);
+        });
+
+        // Show/hide nav buttons
+        const showNav = images.length > 1;
+        document.getElementById("carouselPrev").style.display = showNav
+          ? ""
+          : "none";
+        document.getElementById("carouselNext").style.display = showNav
+          ? ""
+          : "none";
+        dots.style.display = showNav ? "" : "none";
+        goToSlide(0);
+      }
+
+      function goToSlide(n) {
+        currentSlide = (n + totalSlides) % totalSlides;
+        document.getElementById(
+          "carouselTrack"
+        ).style.transform = `translateX(-${currentSlide * 100}%)`;
+        document.querySelectorAll(".carousel-dot").forEach((d, i) => {
+          d.classList.toggle("active", i === currentSlide);
+        });
+      }
+
+      document
+        .getElementById("carouselPrev")
+        .addEventListener("click", () => goToSlide(currentSlide - 1));
+      document
+        .getElementById("carouselNext")
+        .addEventListener("click", () => goToSlide(currentSlide + 1));
+
+      // Keyboard arrow nav inside drawer
+      document.addEventListener("keydown", (e) => {
+        if (!document.getElementById("drawer").classList.contains("open"))
+          return;
+        if (e.key === "ArrowLeft") goToSlide(currentSlide - 1);
+        if (e.key === "ArrowRight") goToSlide(currentSlide + 1);
+        if (e.key === "Escape") closeDrawer();
+      });
+
+      /* ─── Drawer open/close ─── */
+      function openDrawer(key) {
+        const p = PROJECTS[key];
+        if (!p) return;
+
+        // Carousel
+        buildCarousel(p.images, p.icon, p.name);
+
+        // Meta / tag
+        document.getElementById(
+          "drawerMeta"
+        ).innerHTML = `<span class="project-tag">${p.tag}</span>`;
+
+        // Title + desc
+        document.getElementById("drawerTitle").textContent = p.name;
+        document.getElementById("drawerDesc").textContent = p.desc;
+
+        // Points
+        const ul = document.getElementById("drawerPoints");
+        ul.innerHTML = p.points.map((pt) => `<li>${pt}</li>`).join("");
+
+        // Tech tags
+        document.getElementById("drawerTags").innerHTML = p.tags
+          .map((t) => `<span class="tag">${t}</span>`)
+          .join("");
+
+        // Actions
+        document.getElementById("drawerActions").innerHTML = `
+      <a href="${p.github}" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        View on GitHub
+      </a>
+      <button class="btn btn-ghost" onclick="closeDrawer()">Close</button>
+    `;
+
+        document.getElementById("drawerOverlay").classList.add("open");
+        document.getElementById("drawer").classList.add("open");
+        document.body.style.overflow = "hidden";
+
+        // Scroll drawer body to top
+        document.querySelector(".drawer-body").scrollTop = 0;
+      }
+
+      function closeDrawer() {
+        document.getElementById("drawerOverlay").classList.remove("open");
+        document.getElementById("drawer").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document
+        .getElementById("drawerOverlay")
+        .addEventListener("click", closeDrawer);
+      document
+        .getElementById("drawerClose")
+        .addEventListener("click", closeDrawer);
+
+      /* ─── Wire up project cards ─── */
+      const cardMap = [
+        ["finmate", '[data-project="finmate"]'],
+        ["vedant", '[data-project="vedant"]'],
+        ["ridam", '[data-project="ridam"]'],
+        ["docksmith", '[data-project="docksmith"]'],
+        ["dribbl", '[data-project="dribbl"]'],
+        ["multitenant", '[data-project="multitenant"]'],
+        ["aireel", '[data-project="aireel"]'],
+        ["kernel", '[data-project="kernel"]'],
+        ["nqueen", '[data-project="nqueen"]'],
+        ["ecommerce", '[data-project="ecommerce"]'],
+      ];
+
+      cardMap.forEach(([key, sel]) => {
+        document.querySelectorAll(sel).forEach((el) => {
+          el.addEventListener("click", (e) => {
+            // Don't open drawer if clicking a link inside the card
+            if (e.target.closest("a")) return;
+            openDrawer(key);
+          });
+        });
+      });
+
+      /* ─── Progress bar ─── */
       const prog = document.getElementById("progress");
       window.addEventListener(
         "scroll",
@@ -1572,7 +2267,7 @@
         { passive: true }
       );
 
-      // Header scroll state
+      /* ─── Header scroll state ─── */
       const hdr = document.getElementById("header");
       window.addEventListener(
         "scroll",
@@ -1582,7 +2277,7 @@
         { passive: true }
       );
 
-      // Reveal on scroll
+      /* ─── Reveal on scroll ─── */
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((e) => {
@@ -1600,7 +2295,7 @@
         observer.observe(el);
       });
 
-      // Hero entrance animation
+      /* ─── Hero entrance animation ─── */
       const heroEls = [
         { id: "ey", delay: 0 },
         { id: "hn", delay: 120 },
