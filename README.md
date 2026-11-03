@@ -55,27 +55,24 @@ I'm a Computer Science and Engineering student at **PES University, Bengaluru**,
 
 ## Competitive programming
 
-**LeetCode**
-
-<div align="center">
-
-[![LeetCode — OnShoreApple](https://img.shields.io/badge/LeetCode-OnShoreApple-F89F1B?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/OnShoreApple/)
-
-[![LeetCode Stats](https://leetcard.jacoblin.cool/OnShoreApple?theme=dark&font=Baloo&ext=contest)](https://leetcode.com/u/OnShoreApple/)
-
-</div>
-
-**Codeforces**
-
-<div align="center">
-
-[![Codeforces — OnShoreApple](https://img.shields.io/badge/Codeforces-OnShoreApple-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/OnShoreApple)
-
-[![Codeforces Stats](https://codeforces-readme-stats.vercel.app/api/card?username=OnShoreApple)](https://codeforces.com/profile/OnShoreApple)
-
-</div>
-
-<sub>Statistics are supplied by third-party profile-card services and may occasionally be unavailable. The linked profiles remain the source of truth.</sub>
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <strong>LeetCode</strong><br/>
+      <a href="https://leetcode.com/u/OnShoreApple/">@OnShoreApple</a><br/><br/>
+      <a href="https://leetcode.com/u/OnShoreApple/">
+        <img src="https://leetcard.jacoblin.cool/OnShoreApple?theme=dark&amp;font=Inter&amp;animation=false&amp;hide=ranking" alt="LeetCode problem-solving statistics" width="380" />
+      </a>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <strong>Codeforces</strong><br/>
+      <a href="https://codeforces.com/profile/OnShoreApple">@OnShoreApple</a><br/><br/>
+      <a href="https://codeforces.com/profile/OnShoreApple">
+        <img src="https://codeforces-readme-stats.vercel.app/api/card?username=OnShoreApple" alt="Codeforces rating and problem-solving statistics" width="380" />
+      </a>
+    </td>
+  </tr>
+</table>
 
 ---
 
