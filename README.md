@@ -6,10 +6,10 @@
 
 *Turning ideas into useful, reliable software.*
 
+[![Portfolio](https://img.shields.io/badge/Portfolio-Explore-75D6B0?style=for-the-badge&logo=vercel&logoColor=111111)](https://portfolio-eight-rose-81.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shashwat-solanki-546337152/)
 [![LeetCode](https://img.shields.io/badge/LeetCode-Practice-F89F1B?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/OnShoreApple)
 [![Codeforces](https://img.shields.io/badge/Codeforces-Profile-445F9D?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/OnShoreApple)
-[![Email](https://img.shields.io/badge/Email-Say_hello-BB4B63?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shashwatsolanki.work@gmail.com)
 
 </div>
 
@@ -93,11 +93,22 @@ Practising data structures and algorithms on LeetCode and Codeforces.
 
 ---
 
+## GitHub snapshot
+
 <div align="center">
 
-**Find me around the web**
+<a href="https://github.com/ShashwatSolanki">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=ShashwatSolanki&show_icons=true&hide_title=true&hide_border=true&theme=transparent&rank_icon=github" alt="GitHub profile statistics" />
+</a>
+<a href="https://github.com/ShashwatSolanki?tab=repositories">
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ShashwatSolanki&layout=compact&hide_border=true&theme=transparent&langs_count=8" alt="Most used languages" />
+</a>
 
-[GitHub repositories](https://github.com/ShashwatSolanki?tab=repositories) · [Contribution activity](https://github.com/ShashwatSolanki?tab=overview)
+</div>
+
+<div align="center">
+
+[**Explore my portfolio**](https://portfolio-eight-rose-81.vercel.app) · [**Get in touch**](mailto:shashwatsolanki.work@gmail.com) · [**View my repositories**](https://github.com/ShashwatSolanki?tab=repositories)
 
 <br/>
 
