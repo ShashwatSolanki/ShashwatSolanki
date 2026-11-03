@@ -4,11 +4,11 @@
 
 ### AI Systems · Backend Engineering · Systems Programming
 
-*Turning ideas into useful, reliable software.*
+**Building intelligent systems, dependable backends, and software closer to the metal.**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Explore-75D6B0?style=for-the-badge&logo=githubpages&logoColor=111111)](https://shashwatsolanki.github.io/ShashwatSolanki/)
+[![Website](https://img.shields.io/badge/Website-Visit-75D6B0?style=for-the-badge&logo=githubpages&logoColor=111111)](https://shashwatsolanki.github.io/ShashwatSolanki/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shashwat-solanki-546337152/)
-[![LeetCode](https://img.shields.io/badge/LeetCode-Practice-F89F1B?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/OnShoreApple)
+[![LeetCode](https://img.shields.io/badge/LeetCode-Profile-F89F1B?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/OnShoreApple)
 [![Codeforces](https://img.shields.io/badge/Codeforces-Profile-445F9D?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/OnShoreApple)
 
 </div>
@@ -17,46 +17,41 @@
 
 ## About
 
-I'm a Computer Science and Engineering student at **PES University, Bengaluru**, interested in building intelligent systems that work beyond the demo.
+I'm a Computer Science and Engineering student at **PES University, Bengaluru**. I enjoy working across AI systems, backend engineering, and lower-level infrastructure—especially where reliability and measurable behaviour matter.
 
-- **AI & research** — LLMs, retrieval-augmented generation (RAG), agentic workflows, and model evaluation.
-- **Backend & systems** — APIs, authentication, databases, distributed systems, and infrastructure.
-- **Research experience** — Research intern at **SAC–ISRO**, working on geospatial tooling.
+Previously a **Research Intern at SAC–ISRO**, contributing to geospatial tooling and visualization.
 
-## Toolkit
+## Highlights
+
+- **SAC–ISRO:** Research internship focused on geospatial systems and satellite-data workflows.
+- **4th place:** CodeChef Labyrinth, PES University.
+- **6th place:** Ather Ignition Hackathon.
+
+## Technical toolkit
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=python,go,c,java,js,ts,vue,react,nodejs,fastapi,postgres,mysql,docker,linux,aws,git,cesium,electron&perline=9" alt="Programming languages and tools" />
+<img src="https://skillicons.dev/icons?i=python,go,c,java,js,ts,vue,react,nodejs,express,fastapi,postgres,mysql,docker,linux,aws,git,electron&perline=9" alt="Programming languages, frameworks and tools" />
 
 </div>
 
-<details>
-<summary><b>AI / ML stack</b></summary>
+<div align="center">
 
-PyTorch · Hugging Face · scikit-learn · NumPy · Pandas · LLMs · RAG · Embeddings · QLoRA · Agentic systems · Model evaluation
+![CesiumJS](https://img.shields.io/badge/CesiumJS-Geospatial%20Visualization-6CADDF?style=flat-square)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![Hugging%20Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
+![scikit--learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
 
-</details>
+</div>
 
-## What I'm focused on
+<sub>Also working with LLMs, RAG, embeddings, QLoRA, agentic workflows, model evaluation, SQLAlchemy, and WebSockets. Technologies shown reflect hands-on work across projects and coursework; depth varies by tool.</sub>
 
-<details open>
-<summary><b>Building better AI systems</b></summary>
+## Current focus
 
-Making LLM applications more useful through retrieval, tool use, evaluation, and reliability.
-</details>
-
-<details>
-<summary><b>Engineering solid foundations</b></summary>
-
-Going deeper on backend architecture, databases, distributed systems, and infrastructure.
-</details>
-
-<details>
-<summary><b>Problem solving</b></summary>
-
-Practising data structures and algorithms on LeetCode and Codeforces.
-</details>
+- Building AI applications with clear boundaries between model reasoning and deterministic logic.
+- Improving retrieval, agent orchestration, evaluation, and reliability.
+- Deepening backend architecture, distributed systems, and infrastructure fundamentals.
+- Exploring systems programming and geospatial visualization.
 
 ---
 
@@ -64,14 +59,11 @@ Practising data structures and algorithms on LeetCode and Codeforces.
 
 <div align="center">
 
-<a href="https://github.com/ShashwatSolanki">
-  <img height="165" src="https://github-stats-extended.vercel.app/api?username=ShashwatSolanki&show_icons=true&hide_title=true&hide_border=true&theme=transparent&rank_icon=github" alt="GitHub profile statistics" />
-</a>
-<a href="https://github.com/ShashwatSolanki?tab=repositories">
-  <img height="165" src="https://github-stats-extended.vercel.app/api/top-langs/?username=ShashwatSolanki&layout=compact&hide_border=true&theme=transparent&langs_count=8" alt="Most used languages" />
-</a>
+<img src="./metrics.svg" alt="Automatically generated GitHub profile and language metrics" width="100%" />
 
 </div>
+
+<sub>Metrics are generated daily by GitHub Actions from public profile data. The workflow is in <code>.github/workflows/metrics.yml</code>.</sub>
 
 ---
 
