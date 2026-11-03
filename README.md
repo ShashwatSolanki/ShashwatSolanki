@@ -25,51 +25,18 @@ I'm a Computer Science and Engineering student at **PES University, Bengaluru**,
 
 ## Toolkit
 
-<table>
-<tr>
-<td width="50%" valign="top">
+<div align="center">
 
-**Languages**
+<img src="https://skillicons.dev/icons?i=python,go,c,java,js,ts,react,nodejs,fastapi,postgres,mysql,docker,linux,aws,git&perline=8" alt="Programming languages and tools" />
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![C](https://img.shields.io/badge/C-555555?style=flat-square&logo=c&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+</div>
 
-</td>
-<td width="50%" valign="top">
+<details>
+<summary><b>AI / ML stack</b></summary>
 
-**Frameworks & tools**
+PyTorch · Hugging Face · scikit-learn · NumPy · Pandas · LLMs · RAG · Embeddings · QLoRA · Agentic systems · Model evaluation
 
-![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top">
-
-**AI / ML**
-
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
-![scikit--learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-
-LLMs · RAG · Embeddings · QLoRA · Agentic systems · Model evaluation
-
-</td>
-</tr>
-</table>
+</details>
 
 ## What I'm focused on
 
@@ -98,19 +65,23 @@ Practising data structures and algorithms on LeetCode and Codeforces.
 <div align="center">
 
 <a href="https://github.com/ShashwatSolanki">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=ShashwatSolanki&show_icons=true&hide_title=true&hide_border=true&theme=transparent&rank_icon=github" alt="GitHub profile statistics" />
+  <img height="165" src="https://github-stats-extended.vercel.app/api?username=ShashwatSolanki&show_icons=true&hide_title=true&hide_border=true&theme=transparent&rank_icon=github" alt="GitHub profile statistics" />
 </a>
 <a href="https://github.com/ShashwatSolanki?tab=repositories">
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ShashwatSolanki&layout=compact&hide_border=true&theme=transparent&langs_count=8" alt="Most used languages" />
+  <img height="165" src="https://github-stats-extended.vercel.app/api/top-langs/?username=ShashwatSolanki&layout=compact&hide_border=true&theme=transparent&langs_count=8" alt="Most used languages" />
 </a>
+
+<br/>
+
+<a href="https://github.com/ShashwatSolanki?tab=repositories">Browse repositories</a> · <a href="https://github.com/ShashwatSolanki">GitHub profile</a> · <a href="https://leetcode.com/OnShoreApple">LeetCode profile</a>
 
 </div>
 
+---
+
 <div align="center">
 
-[**Explore my portfolio**](https://portfolio-eight-rose-81.vercel.app) · [**Get in touch**](mailto:shashwatsolanki.work@gmail.com) · [**View my repositories**](https://github.com/ShashwatSolanki?tab=repositories)
-
-<br/>
+[**Explore my portfolio**](https://portfolio-eight-rose-81.vercel.app) · [**Get in touch**](mailto:shashwatsolanki.work@gmail.com)
 
 *Crafting thoughtful digital experiences with simplicity and purpose.*
 
