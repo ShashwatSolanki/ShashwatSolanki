@@ -31,7 +31,7 @@ Previously a **Research Intern at SAC–ISRO**, contributing to geospatial tooli
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=python,go,c,java,js,ts,vue,react,nodejs,express,fastapi,postgres,mysql,docker,linux,aws,git,electron&perline=9" alt="Programming languages, frameworks and tools" />
+<img src="https://skillicons.dev/icons?i=py,go,c,java,js,ts,vue,react,nodejs,express,fastapi,postgres,mysql,docker,linux,aws,git,electron&perline=9" alt="Programming languages, frameworks and tools" />
 
 </div>
 
