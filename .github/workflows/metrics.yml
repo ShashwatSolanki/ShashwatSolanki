@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "README.md"
+      - "metrics.svg"
       - "scripts/generate_metrics.py"
       - ".github/workflows/metrics.yml"
   schedule:
