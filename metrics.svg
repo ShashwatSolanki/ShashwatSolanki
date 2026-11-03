@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="176" viewBox="0 0 960 176" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub profile metrics are being configured</title>
+  <desc id="desc">This placeholder will be replaced by an automatically generated profile metrics card after the METRICS_TOKEN secret is configured.</desc>
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#75d6b0"/>
+      <stop offset="1" stop-color="#6cadff"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="958" height="174" rx="16" fill="#0d1117" stroke="#30363d"/>
+  <rect x="28" y="28" width="4" height="32" rx="2" fill="url(#accent)"/>
+  <text x="48" y="43" fill="#e6edf3" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">GitHub snapshot</text>
+  <text x="48" y="70" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="13">Automated profile and language metrics</text>
+  <line x1="28" y1="94" x2="932" y2="94" stroke="#30363d"/>
+  <circle cx="39" cy="125" r="5" fill="#75d6b0"/>
+  <text x="55" y="130" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="13">Metrics workflow is ready</text>
+  <text x="55" y="151" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="12">Add the METRICS_TOKEN repository secret, then run “Profile metrics” from the Actions tab.</text>
+</svg>
