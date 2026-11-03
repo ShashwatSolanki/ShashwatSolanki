@@ -19,9 +19,9 @@ I'm a Computer Science and Engineering student at **PES University, Bengaluru**,
 
 ## Experience & highlights
 
-- **Research Intern — SAC–ISRO:** Worked on geospatial tooling, satellite-data workflows, and visualization.
-- **4th place — CodeChef Labyrinth**, PES University.
-- **6th place — Ather Ignition Hackathon.**
+- **Research Intern - SAC–ISRO:** Worked on geospatial tooling, satellite-data workflows, and visualization.
+- **4th place - CodeChef Labyrinth**, PES University.
+- **6th place - Ather Ignition Hackathon.**
 
 ## Technical toolkit
 
