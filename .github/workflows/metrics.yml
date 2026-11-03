@@ -20,7 +20,7 @@ jobs:
 
       - name: Generate profile metrics
         if: ${{ env.METRICS_TOKEN != '' }}
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ env.METRICS_TOKEN }}
           user: ShashwatSolanki
