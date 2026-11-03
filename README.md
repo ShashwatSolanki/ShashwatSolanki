@@ -17,13 +17,11 @@
 
 ## About
 
-I'm a Computer Science and Engineering student at **PES University, Bengaluru**. I enjoy working across AI systems, backend engineering, and lower-level infrastructure—especially where reliability and measurable behaviour matter.
-
-Previously a **Research Intern at SAC–ISRO**, contributing to geospatial tooling and visualization.
+I'm a Computer Science and Engineering student at **PES University, Bengaluru**, interested in building AI applications, dependable backend systems, and infrastructure where reliability and measurable behaviour matter.
 
 ## Highlights
 
-- **SAC–ISRO:** Research internship focused on geospatial systems and satellite-data workflows.
+- **Research Intern — SAC–ISRO:** Geospatial systems, satellite-data workflows, and visualization.
 - **4th place:** CodeChef Labyrinth, PES University.
 - **6th place:** Ather Ignition Hackathon.
 
@@ -55,15 +53,13 @@ Previously a **Research Intern at SAC–ISRO**, contributing to geospatial tooli
 
 ---
 
-## GitHub snapshot
+## GitHub at a glance
 
 <div align="center">
 
-<img src="./metrics.svg" alt="Automatically generated GitHub profile and language metrics" width="100%" />
+<img src="./metrics.svg" alt="GitHub repository and language statistics" width="480" />
 
 </div>
-
-<sub>Metrics are generated daily by GitHub Actions from public profile data. The workflow is in <code>.github/workflows/metrics.yml</code>.</sub>
 
 ---
 
