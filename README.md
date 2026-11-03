@@ -25,6 +25,24 @@ Previously a **Research Intern at SAC–ISRO**, contributing to geospatial tooli
 - **4th place:** CodeChef Labyrinth, PES University.
 - **6th place:** Ather Ignition Hackathon.
 
+## Competitive programming
+
+<div align="center">
+
+[![LeetCode](https://img.shields.io/badge/LeetCode-OnShoreApple-F89F1B?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/OnShoreApple/)
+[![Codeforces](https://img.shields.io/badge/Codeforces-OnShoreApple-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/OnShoreApple)
+
+</div>
+
+<div align="center">
+
+[![LeetCode Stats](https://leetcard.jacoblin.cool/OnShoreApple?theme=dark&font=Baloo&ext=contest)](https://leetcode.com/u/OnShoreApple/)
+[![Codeforces Stats](https://codeforces-readme-stats.vercel.app/api/card?username=OnShoreApple)](https://codeforces.com/profile/OnShoreApple)
+
+</div>
+
+<sub>Stats are provided by third-party public profile-card services and may be temporarily unavailable or limited by platform visibility. Open the linked profiles for the authoritative, up-to-date records.</sub>
+
 ## Technical toolkit
 
 <div align="center">
