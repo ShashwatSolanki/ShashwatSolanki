@@ -15,7 +15,7 @@
 
 ## About
 
-I'm a Computer Science and Engineering student at **PES University, Bengaluru**, interested in building AI applications, reliable backend systems, and software closer to the infrastructure layer.
+I'm a Computer Science and Engineering student at **PES University, Bengaluru**, interested in building AI applications, reliable backend systems, and software closer to the infrastructure layer. My current work focuses on retrieval, agent orchestration, model evaluation, and dependable distributed systems.
 
 ## Experience & highlights
 
@@ -44,35 +44,21 @@ I'm a Computer Science and Engineering student at **PES University, Bengaluru**,
 
 </div>
 
-<sub>Also working with LLMs, RAG, embeddings, QLoRA, agentic workflows, model evaluation, SQLAlchemy, WebSockets, NumPy, and Pandas. Technologies reflect hands-on work across projects and coursework; depth varies by tool.</sub>
-
-## Current focus
-
-- Building AI applications with clear boundaries between model reasoning and deterministic logic.
-- Improving retrieval, agent orchestration, evaluation, and reliability.
-- Deepening backend architecture, distributed systems, and infrastructure fundamentals.
-- Exploring systems programming and geospatial visualization.
+<sub>Also working with LLMs, RAG, embeddings, QLoRA, agentic workflows, SQLAlchemy, WebSockets, NumPy, and Pandas. Technologies reflect hands-on work across projects and coursework; depth varies by tool.</sub>
 
 ## Competitive programming
 
-<table>
-  <tr>
-    <td width="50%" align="center" valign="top">
-      <strong>LeetCode</strong><br/>
-      <a href="https://leetcode.com/u/OnShoreApple/">@OnShoreApple</a><br/><br/>
-      <a href="https://leetcode.com/u/OnShoreApple/">
-        <img src="https://leetcard.jacoblin.cool/OnShoreApple?theme=dark&amp;font=Inter&amp;animation=false&amp;hide=ranking" alt="LeetCode problem-solving statistics" width="380" />
-      </a>
-    </td>
-    <td width="50%" align="center" valign="top">
-      <strong>Codeforces</strong><br/>
-      <a href="https://codeforces.com/profile/OnShoreApple">@OnShoreApple</a><br/><br/>
-      <a href="https://codeforces.com/profile/OnShoreApple">
-        <img src="https://codeforces-readme-stats.vercel.app/api/card?username=OnShoreApple" alt="Codeforces rating and problem-solving statistics" width="380" />
-      </a>
-    </td>
-  </tr>
-</table>
+<div align="center">
+
+**LeetCode**
+
+<a href="https://leetcode.com/u/OnShoreApple/">
+  <img src="https://leetcard.jacoblin.cool/OnShoreApple?theme=dark&amp;font=Inter&amp;animation=false&amp;hide=ranking" alt="LeetCode problem-solving statistics" width="380" />
+</a>
+
+Also on <a href="https://codeforces.com/profile/OnShoreApple">Codeforces · @OnShoreApple</a>
+
+</div>
 
 ---
 
