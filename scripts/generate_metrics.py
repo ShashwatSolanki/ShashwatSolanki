@@ -82,7 +82,7 @@ def collect_totals(token: str) -> dict[str, int]:
 
     repos = [
         repo for repo in payload
-        if isinstance(repo, dict) and not repo.get("fork", False)
+        if isinstance(repo, dict) and not repo.get("fork", False) and not repo.get("private", False)
     ]
     totals: dict[str, int] = {}
 
