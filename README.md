@@ -7,9 +7,7 @@
 **Building intelligent systems, dependable backends, and software closer to the metal.**
 
 [![Website](https://img.shields.io/badge/Website-Visit-75D6B0?style=for-the-badge&logo=githubpages&logoColor=111111)](https://shashwatsolanki.github.io/ShashwatSolanki/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shashwat-solanki-546337152/)
-[![LeetCode](https://img.shields.io/badge/LeetCode-Profile-F89F1B?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/OnShoreApple)
-[![Codeforces](https://img.shields.io/badge/Codeforces-Profile-445F9D?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/OnShoreApple)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/solankishashwat/)
 
 </div>
 
@@ -55,18 +53,10 @@ Previously a **Research Intern at SAC–ISRO**, contributing to geospatial tooli
 
 ---
 
-## GitHub at a glance
+## Top 4 languages
 
 <div align="center">
 
-<img src="./metrics.svg" alt="GitHub repository and language statistics" width="480" />
-
-</div>
-
----
-
-<div align="center">
-
-*Crafting thoughtful digital experiences with simplicity and purpose.*
+<img src="./metrics.svg" alt="Top four most-used programming languages" width="480" />
 
 </div>
