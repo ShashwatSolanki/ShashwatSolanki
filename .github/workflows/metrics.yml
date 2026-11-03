@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "README.md"
+      - "scripts/generate_metrics.py"
       - ".github/workflows/metrics.yml"
   schedule:
     - cron: "23 5 * * *"
@@ -14,35 +15,30 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: profile-metrics
+  cancel-in-progress: true
+
 jobs:
   generate:
     runs-on: ubuntu-latest
-    env:
-      METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
     steps:
-      - name: Skip until the metrics token is configured
-        if: ${{ env.METRICS_TOKEN == '' }}
-        run: echo "::notice::Add the METRICS_TOKEN repository secret to enable profile metrics."
+      - name: Check out profile repository
+        uses: actions/checkout@v4
 
-      - name: Generate top-four language card
-        if: ${{ env.METRICS_TOKEN != '' }}
-        uses: lowlighter/metrics@v3.34
-        with:
-          token: ${{ env.METRICS_TOKEN }}
-          user: ShashwatSolanki
-          filename: metrics.svg
-          base: ""
-          config_order: languages
-          config_display: regular
-          config_padding: 0, 4
-          plugin_languages: yes
-          plugin_languages_sections: most-used
-          plugin_languages_details: percentage
-          plugin_languages_limit: 4
-          plugin_languages_threshold: 1%
-          extras_css: |
-            h2.field { display: none !important; }
-          output_action: commit
-          committer_message: "chore: refresh top-four language metrics [Skip GitHub Action]"
-          retries: 3
-          retries_delay: 60
+      - name: Generate language card
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: python scripts/generate_metrics.py
+
+      - name: Commit updated SVG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add metrics.svg
+          if git diff --cached --quiet; then
+            echo "Language metrics are unchanged."
+            exit 0
+          fi
+          git commit -m "chore: refresh top-four language metrics [skip ci]"
+          git push
