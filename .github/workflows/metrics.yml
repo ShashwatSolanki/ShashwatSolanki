@@ -24,17 +24,18 @@ jobs:
         if: ${{ env.METRICS_TOKEN == '' }}
         run: echo "::notice::Add the METRICS_TOKEN repository secret to enable profile metrics."
 
-      - name: Generate language distribution
+      - name: Generate compact profile metrics
         if: ${{ env.METRICS_TOKEN != '' }}
         uses: lowlighter/metrics@v3.34
         with:
           token: ${{ env.METRICS_TOKEN }}
           user: ShashwatSolanki
           filename: metrics.svg
-          base: ""
-          config_order: languages
+          base: repositories
+          config_order: base.repositories, languages
           config_display: regular
           config_padding: 0, 4
+          config_timezone: Asia/Kolkata
           plugin_languages: yes
           plugin_languages_sections: most-used
           plugin_languages_details: percentage
@@ -43,6 +44,6 @@ jobs:
           plugin_languages_ignored: >-
             HTML, CSS, SCSS, Makefile, Dockerfile
           output_action: commit
-          committer_message: "chore: refresh language metrics [Skip GitHub Action]"
+          committer_message: "chore: refresh profile metrics [Skip GitHub Action]"
           retries: 3
           retries_delay: 60
